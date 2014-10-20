@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<config>
+<resources>
+	<images>
+		<IDI_ICON_RISKY path=".\MainFrame\Image\icon_risky.png"/>
+		<IDI_ICON_SAFE  path=".\MainFrame\Image\icon_safe.png"/>
+		<IDI_ICON_DANGER path=".\Common\Image\icon_danger.png"/>
+		<IDI_ICON_ADVISE path=".\Common\Image\icon_advise.png"/>
+		<IDI_BTN_EXPAND path=".\Common\Image\btn_expand.png"/>
+		<IDI_BTN_FOLD   path=".\Common\Image\btn_fold.png"/>
+		<IDI_DOT_LINE   path=".\Common\Image\dot_line.png"/>
+		<IDI_SOLID_LINE  path=".\Common\Image\solid_line.png">
+			<image_parts>
+				<normal x_size_split="0,8,0" y_size_split="0,1,0" frame_index="0"/>
+				<hot x_size_split="0,8,0" y_size_split="0,1,0" frame_index="0"/>
+				<selected x_size_split="0,8,0" y_size_split="0,1,0" frame_index="0"/>
+				<disabled x_size_split="0,8,0" y_size_split="0,1,0" frame_index="0"/>
+			</image_parts>
+		</IDI_SOLID_LINE>
+		<IDI_BTN_ROUND_GRAY path=".\Common\Image\btn_round_gray.png"/>
+		<IDI_BTN_ROUND_GREEN path=".\Common\Image\btn_round_green.png"/>
+		<IDI_LOADING    path=".\Common\Image\loading16.png"/>
+		<IDI_BTN_LIST_FIX path=".\Common\Image\btn_small_green.png">
+			<image_parts>
+				<normal x_size_split="2,18,2" y_size_split="2,18,2" frame_index="0"/>
+				<hot x_size_split="2,18,2" y_size_split="2,18,2" frame_index="1"/>
+				<selected x_size_split="2,18,2" y_size_split="2,18,2" frame_index="2"/>
+				<disabled x_size_split="2,18,2" y_size_split="2,18,2" frame_index="3"/>
+			</image_parts>
+		</IDI_BTN_LIST_FIX>
+	</images>
+</resources>
+<window id="0" title="" style="0x06cf0000" style_ex="0" bound="0,0,600,460"/>
+</config>

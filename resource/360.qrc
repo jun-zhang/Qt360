@@ -1,0 +1,34 @@
+<RCC>
+    <qresource prefix="/default">
+        <file alias="clean">default_theme/MainFrame/Image/clean.png</file>
+        <file alias="enter_anim">OKClean_theme/Image/enter_anim.png</file>
+        <file alias="group_check">OKClean_theme/Image/group_check.png</file>
+        <file alias="group_uncheck">OKClean_theme/Image/group_uncheck.png</file>
+        <file alias="select_hover">OKClean_theme/Image/select_hover.png</file>
+        <file alias="select_normal">OKClean_theme/Image/select_normal.png</file>
+        <file alias="cookies_anim">OKClean_theme/Image/cookies_anim.png</file>
+        <file alias="cookies_anim_gray">OKClean_theme/Image/cookies_anim_gray.png</file>
+        <file alias="plugin_anim">OKClean_theme/Image/plugin_anim.png</file>
+        <file alias="plugin_anim_gray">OKClean_theme/Image/plugin_anim_gray.png</file>
+        <file alias="soft_anim">OKClean_theme/Image/soft_anim.png</file>
+        <file alias="soft_anim_gray">OKClean_theme/Image/soft_anim_gray.png</file>
+        <file alias="trace_anim">OKClean_theme/Image/trace_anim.png</file>
+        <file alias="trace_anim_gray">OKClean_theme/Image/trace_anim_gray.png</file>
+        <file alias="trash_anim">OKClean_theme/Image/trash_anim.png</file>
+        <file alias="trash_anim_gray">OKClean_theme/Image/trash_anim_gray.png</file>
+        <file alias="clean_cookies_check">OKClean_theme/Image/clean_cookies_check.png</file>
+        <file alias="clean_cookies_uncheck">OKClean_theme/Image/clean_cookies_uncheck.png</file>
+        <file alias="clean_plugin_check">OKClean_theme/Image/clean_plugin_check.png</file>
+        <file alias="clean_plugin_uncheck">OKClean_theme/Image/clean_plugin_uncheck.png</file>
+        <file alias="chean_reg_check">OKClean_theme/Image/clean_reg_check.png</file>
+        <file alias="chean_reg_uncheck">OKClean_theme/Image/clean_reg_uncheck.png</file>
+        <file alias="clean_soft_check">OKClean_theme/Image/clean_soft_check.png</file>
+        <file alias="clean_soft_uncheck">OKClean_theme/Image/clean_soft_uncheck.png</file>
+        <file alias="clean_trace_check">OKClean_theme/Image/clean_trace_check.png</file>
+        <file alias="clean_trace_uncheck">OKClean_theme/Image/clean_trace_uncheck.png</file>
+        <file alias="clean_trash_check">OKClean_theme/Image/clean_trash_check.png</file>
+        <file alias="clean_trash_uncheck">OKClean_theme/Image/clean_trash_uncheck.png</file>
+        <file alias="registry_anim">OKClean_theme/Image/registry_anim.png</file>
+        <file alias="registry_anim_gray">OKClean_theme/Image/registry_anim_gray.png</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,56 @@
+﻿<?xml version="1.0"?>
+<config><resources>
+		<images>
+			<IDR_ABOUT_PNG path=".\SafeMenu\Image\about.png"/>
+			<IDR_FEATURE_PNG path=".\SafeMenu\Image\feature.png"/>
+			<IDR_FORUM_PNG path=".\SafeMenu\Image\forum.png"/>
+			<IDR_HELP_PNG path=".\SafeMenu\Image\help.png"/>
+			<IDR_HOME_PNG path=".\SafeMenu\Image\home.png"/>
+			<IDR_PRIVATE_PNG path=".\SafeMenu\Image\private.png"/>
+			<IDR_SETTING_PNG path=".\SafeMenu\Image\setting.png"/>
+			<IDR_UPDATE_PNG path=".\SafeMenu\Image\update.png"/>
+			<IDR_ENTERPRISE_PNG path=".\SafeMenu\Image\ent.png"/>
+			<IDR_WHY_FREE_PNG path=".\SafeMenu\Image\why_free.png"/>
+		</images>
+		<strings>
+			<IDS_MENU_ABOUT>
+				<SChinese>关于我们</SChinese>
+			</IDS_MENU_ABOUT>
+			<IDS_MENU_FEATURE>
+				<SChinese>新版特性</SChinese>
+			</IDS_MENU_FEATURE>
+			<IDS_MENU_FORUM>
+				<SChinese>论坛求助</SChinese>
+			</IDS_MENU_FORUM>
+			<IDS_MENU_HELP>
+				<SChinese>在线帮助</SChinese>
+			</IDS_MENU_HELP>
+			<IDS_MENU_HOME>
+				<SChinese>360网站</SChinese>
+			</IDS_MENU_HOME>
+			<IDS_MENU_PRIVATE>
+				<SChinese>隐私保护</SChinese>
+			</IDS_MENU_PRIVATE>
+			<IDS_MENU_SETTING>
+				<SChinese>设置</SChinese>
+			</IDS_MENU_SETTING>
+			<IDS_WHY_FREE>
+				<SChinese>360为什么免费</SChinese>
+			</IDS_WHY_FREE>
+			<IDS_MENU_UPDATE>
+				<SChinese>检测更新</SChinese>
+			</IDS_MENU_UPDATE>
+                        <IDS_MENU_ENTERPRISE>
+				<SChinese>切换为企业版</SChinese>
+			</IDS_MENU_ENTERPRISE>
+		</strings>
+	</resources>
+	<window theme="default" Resouce_type="" id="0" title="" style="0x06cf0000" style_ex="0" script_engine="JScript" script_path="" bound="0,0,130,233" animation_setting="show slide_fade 200 10,hide slide_fade 200 10">
+		<rich_list category="{D6D9AC4C-715F-4311-B1CF-A37C3C3A3C6A}" iid="{92F9B2A2-AF10-49A2-BCEA-0AC69E4C7132}" line_height="40" id="1001" tab_id="0" style="0x10000000" control_style="0x100004" bound="-1,-1,130,233" margin="0,0,0,0" tip="" anchor="0" shortcut="0" icon="" theme="safemenu_list">
+			<panel category="{ACE94411-E3FB-44C8-BD2C-FE3303CCEB3B}" iid="{ED5A6252-F449-45E9-825E-C27E98A26359}" theme="default" id="1002" tab_id="0" style="0x10000020" control_style="0x0" bound="0,-1,130,26" margin="0,0,0,0" tip="" anchor="0" shortcut="0" image="">
+				<picture category="{00073C9D-2E82-437F-917A-7A0C2C8FFC87}" iid="{EA8C5503-10CF-45DE-8F20-1E0D98EC6A09}" theme="default" id="1004" tab_id="0" style="0x10000020" control_style="0x1" bound="10,5,26,19" margin="0,0,0,0" tip="" anchor="0" shortcut="0" image="IDR_SETTING_PNG" cursor="0" frame_count="1" play_frame_index="0" repeat="0" frame_delays=""/>
+				<static category="{FEC1ABC6-6663-4490-BFD6-65CFAA0B0FDA}" iid="{A61FD988-B1D0-4327-870A-75BC4FE9D793}" id="1005" tab_id="0" style="0x10000000" control_style="0x200" bound="35,3,125,22" margin="0,0,0,0" tip="" anchor="0" shortcut="0" title="IDS_MENU_SETTING" autosize="0" pading="0,0" icon_space="5" underline_option="0" icon="" theme="safemenu_item_text" cursor="0"/>
+				<panel category="{ACE94411-E3FB-44C8-BD2C-FE3303CCEB3B}" iid="{ED5A6252-F449-45E9-825E-C27E98A26359}" theme="menu_item_hover" id="1006" tab_id="0" style="0x0" control_style="0x0" bound="0,0,2,25" margin="0,0,0,0" tip="" anchor="0" shortcut="0" image=""/>
+			</panel>
+		</rich_list>
+	</window></config>

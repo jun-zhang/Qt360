@@ -1,0 +1,220 @@
+﻿<?xml version="1.0"?>
+<config>	
+	<resources>
+		<images>
+        <IDI_RADIO_PNG path=".\Common\image\radio.png" />
+        <IDI_CHECKBOX_PNG path=".\Common\image\checkbox.png" />
+        <IDI_SCROLLBAR_THUMB_UP path=".\Common\image\scrollv\thumb.png">
+				<image_parts>
+					<normal>
+						<left_top left="0" top="0" width="0" height="0"/>
+						<right_top left="0" top="0" width="0" height="0"/>
+						<left_bottom left="0" top="0" width="0" height="0"/>
+						<right_bottom left="0" top="0" width="0" height="0"/>
+						<left_middle left="0" top="0" width="0" height="0"/>
+						<right_middle left="0" top="0" width="0" height="0"/>
+						<top_middle left="0" top="0" width="12" height="5"/>
+						<bottom_middle left="0" top="0" width="0" height="0"/>
+						<center left="0" top="0" width="0" height="0"/>
+					</normal>
+					<hot>
+						<left_top left="0" top="0" width="0" height="0"/>
+						<right_top left="0" top="0" width="0" height="0"/>
+						<left_bottom left="0" top="0" width="0" height="0"/>
+						<right_bottom left="0" top="0" width="0" height="0"/>
+						<left_middle left="0" top="0" width="0" height="0"/>
+						<right_middle left="0" top="0" width="0" height="0"/>
+						<top_middle left="0" top="30" width="12" height="5"/>
+						<bottom_middle left="0" top="0" width="0" height="0"/>
+						<center left="0" top="0" width="0" height="0"/>
+					</hot>
+					<selected>
+						<left_top left="0" top="0" width="0" height="0"/>
+						<right_top left="0" top="0" width="0" height="0"/>
+						<left_bottom left="0" top="0" width="0" height="0"/>
+						<right_bottom left="0" top="0" width="0" height="0"/>
+						<left_middle left="0" top="0" width="0" height="0"/>
+						<right_middle left="0" top="0" width="0" height="0"/>
+						<top_middle left="0" top="60" width="12" height="5"/>
+						<bottom_middle left="0" top="0" width="0" height="0"/>
+						<center left="0" top="0" width="0" height="0"/>
+					</selected>
+				</image_parts>
+			</IDI_SCROLLBAR_THUMB_UP>
+			<IDI_SCROLLBAR_THUMB_DOWN path=".\Common\image\scrollv\thumb.png">
+				<image_parts>
+					<normal>
+						<left_top left="0" top="0" width="0" height="0"/>
+						<right_top left="0" top="0" width="0" height="0"/>
+						<left_bottom left="0" top="0" width="0" height="0"/>
+						<right_bottom left="0" top="0" width="0" height="0"/>
+						<left_middle left="0" top="0" width="0" height="0"/>
+						<right_middle left="0" top="0" width="0" height="0"/>
+						<top_middle left="0" top="25" width="12" height="5"/>
+						<bottom_middle left="0" top="0" width="0" height="0"/>
+						<center left="0" top="0" width="0" height="0"/>
+					</normal>
+					<hot>
+						<left_top left="0" top="0" width="0" height="0"/>
+						<right_top left="0" top="0" width="0" height="0"/>
+						<left_bottom left="0" top="0" width="0" height="0"/>
+						<right_bottom left="0" top="0" width="0" height="0"/>
+						<left_middle left="0" top="0" width="0" height="0"/>
+						<right_middle left="0" top="0" width="0" height="0"/>
+						<top_middle left="0" top="55" width="12" height="5"/>
+						<bottom_middle left="0" top="0" width="0" height="0"/>
+						<center left="0" top="0" width="0" height="0"/>
+					</hot>
+					<selected>
+						<left_top left="0" top="0" width="0" height="0"/>
+						<right_top left="0" top="0" width="0" height="0"/>
+						<left_bottom left="0" top="0" width="0" height="0"/>
+						<right_bottom left="0" top="0" width="0" height="0"/>
+						<left_middle left="0" top="0" width="0" height="0"/>
+						<right_middle left="0" top="0" width="0" height="0"/>
+						<top_middle left="0" top="85" width="12" height="5"/>
+						<bottom_middle left="0" top="0" width="0" height="0"/>
+						<center left="0" top="0" width="0" height="0"/>
+					</selected>
+				</image_parts>
+			</IDI_SCROLLBAR_THUMB_DOWN>
+			<IDI_SCROLLBAR_THUMB path=".\Common\image\scrollv\thumb.png">
+				<image_parts>
+					<normal>
+						<left_top left="0" top="5" width="1" height="1"/>
+						<right_top left="11" top="5" width="1" height="1"/>
+						<left_bottom left="0" top="24" width="1" height="1"/>
+						<right_bottom left="11" top="24" width="1" height="1"/>
+						<left_middle left="0" top="6" width="1" height="18"/>
+						<right_middle left="11" top="6" width="1" height="18"/>
+						<top_middle left="1" top="5" width="10" height="1"/>
+						<bottom_middle left="1" top="24" width="10" height="1"/>
+						<center left="1" top="6" width="10" height="18" drawtype="stretch"/>
+					</normal>
+					<hot>
+						<left_top left="0" top="35" width="1" height="1"/>
+						<right_top left="11" top="35" width="1" height="1"/>
+						<left_bottom left="0" top="54" width="1" height="1"/>
+						<right_bottom left="11" top="54" width="1" height="1"/>
+						<left_middle left="0" top="36" width="1" height="18"/>
+						<right_middle left="11" top="36" width="1" height="18"/>
+						<top_middle left="1" top="35" width="10" height="1"/>
+						<bottom_middle left="1" top="54" width="10" height="1"/>
+						<center left="1" top="36" width="10" height="18" drawtype="stretch"/>
+					</hot>
+					<selected>
+						<left_top left="0" top="65" width="1" height="1"/>
+						<right_top left="11" top="65" width="1" height="1"/>
+						<left_bottom left="0" top="84" width="1" height="1"/>
+						<right_bottom left="11" top="84" width="1" height="1"/>
+						<left_middle left="0" top="66" width="1" height="18"/>
+						<right_middle left="11" top="66" width="1" height="18"/>
+						<top_middle left="1" top="65" width="10" height="1"/>
+						<bottom_middle left="1" top="84" width="10" height="1"/>
+						<center left="1" top="66" width="10" height="18" drawtype="stretch"/>
+					</selected>
+				</image_parts>
+			</IDI_SCROLLBAR_THUMB>
+			<IDI_SCROLLBAR_THUMB_CENTER path=".\Common\image\scrollv\thumbgripper.png">
+				<image_parts>
+					<normal>
+						<left_top left="0" top="0" width="0" height="0"/>
+						<right_top left="0" top="0" width="0" height="0"/>
+						<left_bottom left="0" top="0" width="0" height="0"/>
+						<right_bottom left="0" top="0" width="0" height="0"/>
+						<left_middle left="0" top="0" width="0" height="0"/>
+						<right_middle left="0" top="0" width="0" height="0"/>
+						<top_middle left="0" top="0" width="0" height="0"/>
+						<bottom_middle left="0" top="0" width="0" height="0"/>
+						<center left="0" top="0" width="6" height="9"/>
+					</normal>
+					<hot>
+						<left_top left="0" top="0" width="0" height="0"/>
+						<right_top left="0" top="0" width="0" height="0"/>
+						<left_bottom left="0" top="0" width="0" height="0"/>
+						<right_bottom left="0" top="0" width="0" height="0"/>
+						<left_middle left="0" top="0" width="0" height="0"/>
+						<right_middle left="0" top="0" width="0" height="0"/>
+						<top_middle left="0" top="0" width="0" height="0"/>
+						<bottom_middle left="0" top="0" width="0" height="0"/>
+						<center left="0" top="9" width="6" height="9"/>
+					</hot>
+					<selected>
+						<left_top left="0" top="0" width="0" height="0"/>
+						<right_top left="0" top="0" width="0" height="0"/>
+						<left_bottom left="0" top="0" width="0" height="0"/>
+						<right_bottom left="0" top="0" width="0" height="0"/>
+						<left_middle left="0" top="0" width="0" height="0"/>
+						<right_middle left="0" top="0" width="0" height="0"/>
+						<top_middle left="0" top="0" width="0" height="0"/>
+						<bottom_middle left="0" top="0" width="0" height="0"/>
+						<center left="0" top="18" width="6" height="9"/>
+					</selected>
+				</image_parts>
+			</IDI_SCROLLBAR_THUMB_CENTER>
+			<IDI_SCROLLBAR_BG path=".\Common\image\scrollv\background.png">
+				<image_parts>
+					<normal>
+						<left_top left="0" top="0" width="1" height="5"/>
+						<right_top left="11" top="0" width="1" height="5"/>
+						<left_bottom left="0" top="75" width="1" height="5"/>
+						<right_bottom left="11" top="0" width="1" height="5"/>
+						<left_middle left="0" top="5" width="1" height="70"/>
+						<right_middle left="11" top="5" width="1" height="70"/>
+						<top_middle left="1" top="0" width="11" height="5"/>
+						<bottom_middle left="1" top="75" width="11" height="5"/>
+						<center left="0" top="5" width="12" height="70"/>
+					</normal>
+					<hot>
+						<left_top left="0" top="80" width="1" height="5"/>
+						<right_top left="11" top="80" width="1" height="5"/>
+						<left_bottom left="0" top="155" width="1" height="5"/>
+						<right_bottom left="11" top="80" width="1" height="5"/>
+						<left_middle left="0" top="85" width="1" height="70"/>
+						<right_middle left="11" top="85" width="1" height="70"/>
+						<top_middle left="1" top="80" width="11" height="5"/>
+						<bottom_middle left="1" top="155" width="11" height="5"/>
+						<center left="0" top="85" width="12" height="70"/>
+					</hot>
+					<selected>
+						<left_top left="0" top="160" width="1" height="5"/>
+						<right_top left="11" top="160" width="1" height="5"/>
+						<left_bottom left="0" top="235" width="1" height="5"/>
+						<right_bottom left="11" top="160" width="1" height="5"/>
+						<left_middle left="0" top="165" width="1" height="70"/>
+						<right_middle left="11" top="165" width="1" height="70"/>
+						<top_middle left="1" top="160" width="11" height="5"/>
+						<bottom_middle left="1" top="235" width="11" height="5"/>
+						<center left="0" top="165" width="12" height="70"/>
+					</selected>
+				</image_parts>
+			</IDI_SCROLLBAR_BG>
+			<IDI_EXAMINE_SCROLLBAR_BG path=".\Common\image\scrollv\scrollbar_bg.png">
+				<image_parts>
+					<normal x_size_split="2,10,2" y_size_split="0,10,0" frame_index="0"/>
+					<hot x_size_split="2,10,2" y_size_split="0,10,0" frame_index="0"/>
+					<selected x_size_split="2,10,2" y_size_split="0,10,0" frame_index="0"/>
+				</image_parts>
+			</IDI_EXAMINE_SCROLLBAR_BG>
+			<IDI_EXAMINE_SCROLLBAR_THUMB path=".\Common\image\scrollv\scrollbar_thumb.png">
+				<image_parts>
+					<normal x_size_split="0,14,0" y_size_split="4,12,4" frame_index="0"/>
+					<hot x_size_split="0,14,0" y_size_split="4,12,4" frame_index="1"/>
+					<selected x_size_split="0,14,0" y_size_split="4,12,4" frame_index="2"/>
+					<disabled x_size_split="0,14,0" y_size_split="4,12,4" frame_index="3"/>
+				</image_parts>
+			</IDI_EXAMINE_SCROLLBAR_THUMB>
+			<IDI_FLOAT_SCROLLBAR_THUMB path=".\Common\image\scrollv\small_scrollbar_thumb.png">
+				<image_parts>
+					<normal x_size_split="0,10,0" y_size_split="3,12,3" frame_index="0"/>
+					<hot x_size_split="0,10,0" y_size_split="3,12,3" frame_index="1"/>
+					<selected x_size_split="0,10,0" y_size_split="3,12,3" frame_index="2"/>
+					<disabled x_size_split="0,10,0" y_size_split="3,12,3" frame_index="3"/>
+				</image_parts>
+			</IDI_FLOAT_SCROLLBAR_THUMB>
+			<IDI_FLOAT_REGION path=".\Common\image\float_window_region.png"/>
+			<IDI_MINI_FLOAT_REGION path=".\Common\image\mini_float_window_region.png"/>
+		</images>
+		<strings/>
+	</resources>
+</config>

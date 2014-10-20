@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<config><resources>
+		<images>
+			<IDI_ICONHAND path=".\Common\Image\messagebox\msg_icon_error.png"/>
+			<IDI_ICONQUESTION path=".\Common\Image\messagebox\msg_icon_question.png"/>
+			<IDI_ICONEXCLAMATION path=".\Common\Image\messagebox\msg_icon_warning.png"/>
+			<IDI_ICONASTERISK path=".\Common\Image\messagebox\msg_icon_info.png"/>
+			<IDI_ICON360CHECK path=".\Common\Image\messagebox\msg_icon_check.png"/>
+			<IDI_BTN_DEFAULT path=".\Common\Image\btn_round_green.png"/>
+			<IDI_BTN_NORMAL path=".\Common\Image\btn_round_gray.png">
+				<image_parts>
+					<normal x_size_split="20,40,20" y_size_split="0,26,0" frame_index="0"/>
+					<hot x_size_split="20,40,20" y_size_split="0,26,0" frame_index="1"/>
+					<selected x_size_split="20,40,20" y_size_split="0,26,0" frame_index="2"/>
+					<disabled x_size_split="20,40,20" y_size_split="0,26,0" frame_index="3"/>
+				</image_parts>
+			</IDI_BTN_NORMAL>
+			<IDI_ICONTITLE path=".\Common\Image\360logo.ico"/>
+		</images>
+		<strings>
+			<IDS_BUTTON_OK><SChinese>确定</SChinese></IDS_BUTTON_OK>
+			<IDS_BUTTON_CANCEL><SChinese>取消</SChinese></IDS_BUTTON_CANCEL>
+			<IDS_BUTTON_ABORT><SChinese>中止</SChinese></IDS_BUTTON_ABORT>
+			<IDS_BUTTON_RETRY><SChinese>重试</SChinese></IDS_BUTTON_RETRY>
+			<IDS_BUTTON_IGNORE><SChinese>忽略</SChinese></IDS_BUTTON_IGNORE>
+			<IDS_BUTTON_YES><SChinese>是</SChinese></IDS_BUTTON_YES>
+			<IDS_BUTTON_NO><SChinese>否</SChinese></IDS_BUTTON_NO>
+			<IDS_BUTTON_CONTINUE><SChinese>继续</SChinese></IDS_BUTTON_CONTINUE>
+		</strings>
+	</resources>
+	<window script_engine="JScript" theme="MessageBox" Resouce_type="" id="0" title="" style="0x2c70000" style_ex="0" script_path="" bound="0,0,370,193" animation_setting="show impact 200,hide inflate_linear 150 ">
+		<panel category="{ACE94411-E3FB-44C8-BD2C-FE3303CCEB3B}" iid="{ED5A6252-F449-45E9-825E-C27E98A26359}" theme="default" id="1010" tab_id="0" style="0x18000000" control_style="0x0" bound="0,29,390,193" margin="0,0,0,0" tip="" anchor="15" shortcut="0" image=""/>
+		<picture category="{00073C9D-2E82-437F-917A-7A0C2C8FFC87}" iid="{EA8C5503-10CF-45DE-8F20-1E0D98EC6A09}" theme="default" id="1002" tab_id="0" style="0x10000020" control_style="0x5" bound="30,47,71,87" margin="0,0,0,0" tip="" anchor="0" shortcut="0" image="" cursor="0" frame_count="1" play_frame_index="0" repeat="0" frame_delays=""/>
+		<static category="{FEC1ABC6-6663-4490-BFD6-65CFAA0B0FDA}" iid="{A61FD988-B1D0-4327-870A-75BC4FE9D793}" id="1003" tab_id="0" style="0x10000000" control_style="0x0" bound="80,47,342,135" margin="0,0,0,0" tip="" anchor="0" shortcut="0" title="static" autosize="0" pading="0,0" icon_space="5" underline_option="0" icon="" theme="popup_static_normal" cursor="0"/>
+		<button category="{CD2416A2-81E2-486B-9258-E5C30A0755AA}" iid="{7E5A87F0-CA8F-4732-A2F1-0E9903A6570F}" id="1004" tab_id="0" style="0x10800000" control_style="0x0" bound="260,148,342,176" margin="0,0,0,0" tip="" anchor="12" shortcut="0" title="button" icon_align="0" type="0" image="IDI_BTN_NORMAL" icon="" cursor="0" title_cap="3,3" theme="default"/>
+		<button category="{CD2416A2-81E2-486B-9258-E5C30A0755AA}" iid="{7E5A87F0-CA8F-4732-A2F1-0E9903A6570F}" id="1006" tab_id="0" style="0x10800000" control_style="0x0" bound="164,148,236,176" margin="0,0,0,0" tip="" anchor="12" shortcut="0" title="Default" icon_align="0" type="0" image="IDI_BTN_NORMAL" icon="" cursor="0" title_cap="3,3" theme="default"/>
+		<picture category="{00073C9D-2E82-437F-917A-7A0C2C8FFC87}" iid="{EA8C5503-10CF-45DE-8F20-1E0D98EC6A09}" theme="default" id="1008" tab_id="0" style="0x18000020" control_style="0x5" bound="10,7,26,23" margin="0,0,0,0" tip="" anchor="0" shortcut="0" image="IDI_ICONTITLE" cursor="0" frame_count="1" play_frame_index="0" repeat="0" frame_delays=""/>
+		<static category="{FEC1ABC6-6663-4490-BFD6-65CFAA0B0FDA}" iid="{A61FD988-B1D0-4327-870A-75BC4FE9D793}" id="1009" tab_id="0" style="0x18000000" control_style="0x0" bound="31,7,226,24" margin="0,0,0,0" tip="" anchor="0" shortcut="0" title="static" autosize="0" pading="0,0" icon_space="5" underline_option="0" icon="" theme="safe_title" cursor="0"/>
+	</window></config>
