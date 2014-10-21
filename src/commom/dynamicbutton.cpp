@@ -2,7 +2,7 @@
 #include <QPainter>
 
 DynamicButton::DynamicButton(QWidget *parent) :
-    QWidget(parent), m_isSelected(true)
+    QWidget(parent), m_isSelected(true), m_isFirsted(false)
 {
     m_firstdyWidget = new DynamicWidget(this);
     m_firstdyWidget->hide();
@@ -19,8 +19,8 @@ DynamicButton::DynamicButton(QWidget *parent) :
 void DynamicButton::setFirstAnim(const QString &icon, int count)
 {
     QPixmap pix(icon);
-    m_firstdyWidget->setInfo(count, pix.copy(0, 0, pix.width(), 70), 100);
-    m_firstdyWidget->setGeometry((this->width()-m_firstdyWidget->width())/2, (this->height()-m_firstdyWidget->height())/2,\
+    m_firstdyWidget->setInfo(count, pix, 80);
+    m_firstdyWidget->setGeometry((this->width()-m_firstdyWidget->width())/2, (this->height()-70)/2 - 1,\
                             m_firstdyWidget->width(), m_firstdyWidget->height());
     connect(m_firstdyWidget, SIGNAL(animFinished()), this, SLOT(firstAnimFinished()));
 }
@@ -28,11 +28,11 @@ void DynamicButton::setFirstAnim(const QString &icon, int count)
 void DynamicButton::setNormalAnimInfo(const QString &icon, int count)
 {
     QPixmap pix(icon);
-    m_dyWidget->setInfo(count, pix, 100);
+    m_dyWidget->setInfo(count, pix, 50);
     m_dyWidget->setGeometry((this->width()-m_dyWidget->width())/2, (this->height()-m_dyWidget->height())/2,\
                             m_dyWidget->width(), m_dyWidget->height());
 
-    m_dyScaledWidget->setAnimInfo(pix.copy(0, 0, pix.width()/count, pix.height()));
+    m_dyScaledWidget->setAnimInfo(pix.copy(0, 0, pix.width()/count, pix.height()), 70, 9);
     m_dyScaledWidget->setGeometry((this->width()-m_dyScaledWidget->width())/2, (this->height()-m_dyScaledWidget->height())/2,\
                             m_dyScaledWidget->width(), m_dyScaledWidget->height());
     connect(m_dyScaledWidget, SIGNAL(animFinished()), this, SLOT(scaledAnimFinished()));
@@ -47,7 +47,7 @@ void DynamicButton::setNormalIconsInfo(const QString &normalIcon, const QString 
 void DynamicButton::setNoSelectedAnimInfo(const QString &icon, int count)
 {
     QPixmap pix(icon);
-    m_noSelectdDyWidget->setInfo(count, pix, 100);
+    m_noSelectdDyWidget->setInfo(count, pix, 50);
     m_noSelectdDyWidget->setGeometry((this->width()-m_noSelectdDyWidget->width())/2, (this->height()-m_noSelectdDyWidget->height())/2,\
                             m_noSelectdDyWidget->width(), m_noSelectdDyWidget->height());
 }
@@ -60,10 +60,13 @@ void DynamicButton::setNoSelectedIconsInfo(const QString &normalIcon, const QStr
 
 void DynamicButton::startFirstAnim()
 {
-    m_status = BUTTON_FIRST;
-    m_firstdyWidget->show();
-    m_firstdyWidget->raise();
-    m_firstdyWidget->startClockwise();
+    if(m_firstdyWidget != NULL)
+    {
+        m_status = BUTTON_FIRST;
+        m_firstdyWidget->show();
+        m_firstdyWidget->raise();
+        m_firstdyWidget->startClockwise();
+    }
 }
 
 void DynamicButton::scaledAnimFinished()
@@ -71,6 +74,7 @@ void DynamicButton::scaledAnimFinished()
     m_dyScaledWidget->hide();
     disconnect(m_dyScaledWidget, SIGNAL(animFinished()), this, SLOT(scaledAnimFinished()));
     delete m_dyScaledWidget;
+    m_dyScaledWidget = NULL;
     m_status = BUTTON_LEAVE;
     if(m_isSelected)
     {
@@ -89,7 +93,9 @@ void DynamicButton::firstAnimFinished()
     m_firstdyWidget->hide();
     disconnect(m_firstdyWidget, SIGNAL(animFinished()), this, SLOT(firstAnimFinished()));
     delete m_firstdyWidget;
+    m_firstdyWidget = NULL;
     m_status = BUTTON_SCALED;
+    m_isFirsted = true;
     update();
     m_dyScaledWidget->show();
     m_dyScaledWidget->raise();
@@ -103,6 +109,8 @@ void DynamicButton::setCheckedState(bool state)
 
 void DynamicButton::setStatus(BUTTONSTATUS status)
 {
+    if(!m_isFirsted)
+        return;
     m_status = status;
     switch (status) {
     case BUTTON_ENTER:
@@ -129,12 +137,14 @@ void DynamicButton::setStatus(BUTTONSTATUS status)
         {
             m_isSelected = !m_isSelected;
             if(m_isSelected)
-            {
+            {               
+                m_noSelectdDyWidget->stopAnim();
                 m_noSelectdDyWidget->hide();
                 m_dyWidget->raise();
                 m_dyWidget->show();
             }else
             {
+                m_dyWidget->stopAnim();
                 m_dyWidget->hide();
                 m_noSelectdDyWidget->raise();
                 m_noSelectdDyWidget->show();
@@ -151,6 +161,8 @@ void DynamicButton::paintEvent(QPaintEvent *)
 {
     QPainter painter(this);
     switch (m_status) {
+    case BUTTON_FIRST:
+        break;
     case BUTTON_SCALED:
     case BUTTON_LEAVE:
         {

@@ -8,7 +8,7 @@ class DynamicScaledWidget : public QWidget
     Q_OBJECT
 public:
     explicit DynamicScaledWidget(QWidget *parent = 0);
-    void setAnimInfo(const QPixmap &pix, int milliseconds = 200, int number = 5, qreal maxScaledRate = 1.25);
+    void setAnimInfo(const QPixmap &pix, int milliseconds = 400, int number = 5, qreal maxScaledRate = 1.25);
     void startAnim();
 signals:
     void animFinished();

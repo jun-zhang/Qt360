@@ -53,6 +53,17 @@ void DynamicWidget::startCounterclockwise()
         m_counterclockTimer->start();
 }
 
+void DynamicWidget::stopAnim()
+{
+    if(m_clockTimer->isActive())
+        m_clockTimer->stop();
+    if(m_counterclockTimer->isActive())
+        m_counterclockTimer->stop();
+    m_currentIndex = 0;
+    m_currentPix = m_pixList.at(0);
+    update();
+}
+
 void DynamicWidget::updateClockwise()
 {
     if(m_currentIndex != m_count)

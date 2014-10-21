@@ -53,6 +53,7 @@ private:
     QString m_hoverIcon;
     QString m_noSelectedNormalIcon;
     QString m_noSelectedHoverIcon;
+    bool m_isFirsted;
 
 //    QString m_normalAnimIcon;
 //    QString m_noSelectedAnimIcon;

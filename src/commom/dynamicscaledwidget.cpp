@@ -31,11 +31,11 @@ void DynamicScaledWidget::setAnimInfo(const QPixmap &pix, int milliseconds, int 
     {
         if(i == (number/2))
         {
-            m_rateList.insert(number/2, maxScaledRate);
+            m_rateList[number/2] = maxScaledRate;
         }else
         {
-            m_rateList.insert(i, (1 + ((maxScaledRate - 1)/(number/2))*i));
-            m_rateList.insert(number - i, (1 + ((maxScaledRate - 1)/(number/2))*i));
+            m_rateList[i] = (1 + ((maxScaledRate - 1)/((number/2)*1.0))*i);
+            m_rateList[number -1 - i] = (1 + ((maxScaledRate - 1)/((number/2)*1.0))*i);
         }
     }
 }
@@ -50,7 +50,8 @@ void DynamicScaledWidget::updateAnim()
     if(m_currentNum != m_number)
     {
         m_currentPix = m_originPix.scaled(int(m_originWidth*m_rateList.at(m_currentNum)), \
-                                          int(m_originHeight*m_rateList.at(m_currentNum)));
+                                          int(m_originHeight*m_rateList.at(m_currentNum)),\
+                                          Qt::KeepAspectRatio,Qt::SmoothTransformation);
         m_currentNum++;
         update();
         if(m_currentNum == (m_number - 1))

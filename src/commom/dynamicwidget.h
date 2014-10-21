@@ -12,6 +12,7 @@ public:
     void setInfo(int count, const QPixmap &pix, int milliseconds);
     void startClockwise();
     void startCounterclockwise();
+    void stopAnim();
 signals:
     void animFinished();
 private slots:
