@@ -7,8 +7,9 @@ DynamicWidget::DynamicWidget(QWidget *parent) :
     m_currentIndex = 0;
 }
 
-void DynamicWidget::setInfo(int count, const QString &icon, int milliseconds)
+void DynamicWidget::setInfo(int count, const QPixmap &pix, int milliseconds)
 {
+    m_currentIndex = 0;
     m_count = count;
     m_clockTimer = new QTimer(this);
     m_clockTimer->setInterval(milliseconds);
@@ -18,10 +19,14 @@ void DynamicWidget::setInfo(int count, const QString &icon, int milliseconds)
     m_counterclockTimer->setInterval(milliseconds);
     connect(m_counterclockTimer, SIGNAL(timeout()), this, SLOT(updateCounterclockwise()));
 
-    QPixmap pixmap(icon);
+    if(m_pixList.count() != 0)
+    {
+        m_pixList.clear();
+    }
+
     for(int i=0; i != count; i++)
     {
-        m_pixList.append(pixmap.copy(i*(pixmap.width()/count), 0, pixmap.width()/count, pixmap.height()));
+        m_pixList.append(pix.copy(i*(pix.width()/count), 0, pix.width()/count, pix.height()));
     }
     m_currentPix = m_pixList.at(0);
     this->setFixedSize(m_currentPix.size());
@@ -34,6 +39,7 @@ void DynamicWidget::startClockwise()
     {
         m_counterclockTimer->stop();
     }
+    m_currentIndex = 0;
     m_clockTimer->start();
 }
 
@@ -49,7 +55,7 @@ void DynamicWidget::startCounterclockwise()
 
 void DynamicWidget::updateClockwise()
 {
-    for(; m_currentIndex != m_count; m_currentIndex++)
+    if(m_currentIndex != m_count)
     {
         m_currentPix = m_pixList.at(m_currentIndex);
         update();
@@ -59,12 +65,13 @@ void DynamicWidget::updateClockwise()
             m_currentIndex = 0;
             emit animFinished();
         }
+        m_currentIndex++;
     }
 }
 
 void DynamicWidget::updateCounterclockwise()
 {
-    for(; m_currentIndex >= 0; m_currentIndex--)
+    if(m_currentIndex >= 0)
     {
         m_currentPix = m_pixList.at(m_currentIndex);
         update();
@@ -72,6 +79,7 @@ void DynamicWidget::updateCounterclockwise()
         {
             m_counterclockTimer->stop();
         }
+        m_currentIndex--;
     }
 }
 

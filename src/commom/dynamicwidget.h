@@ -9,7 +9,7 @@ class DynamicWidget : public QWidget
     Q_OBJECT
 public:
     explicit DynamicWidget(QWidget *parent = 0);
-    void setInfo(int count, const QString &icon, int milliseconds);
+    void setInfo(int count, const QPixmap &pix, int milliseconds);
     void startClockwise();
     void startCounterclockwise();
 signals:

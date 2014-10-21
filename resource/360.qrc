@@ -30,5 +30,7 @@
         <file alias="clean_trash_uncheck">OKClean_theme/Image/clean_trash_uncheck.png</file>
         <file alias="registry_anim">OKClean_theme/Image/registry_anim.png</file>
         <file alias="registry_anim_gray">OKClean_theme/Image/registry_anim_gray.png</file>
+        <file alias="notselect_hover">OKClean_theme/Image/notselect_hover.png</file>
+        <file alias="notselect_normal">OKClean_theme/Image/notselect_normal.png</file>
     </qresource>
 </RCC>
