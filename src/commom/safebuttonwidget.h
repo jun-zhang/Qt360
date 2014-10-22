@@ -17,7 +17,8 @@ signals:
 protected:
     void enterEvent(QEvent *);
     void leaveEvent(QEvent *);
-    void mousePressEvent(QMouseEvent *);
+    void mousePressEvent(QMouseEvent *e);
+    void mouseReleaseEvent(QMouseEvent *e);
 private:
     StaticButton *m_staticButton;
     DynamicWidget *m_dynamicWidget;

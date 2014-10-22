@@ -34,5 +34,17 @@
         <file alias="notselect_normal">OKClean_theme/Image/notselect_normal.png</file>
         <file alias="scan_button_quick">SafeCheck_theme/Images/scan_button_quick.png</file>
         <file alias="scan_button_quick_hover">SafeCheck_theme/Images/scan_button_quick_hover.png</file>
+        <file alias="cat_gray_hover">360SpeedupOpt_theme/image/cat_gray_hover.png</file>
+        <file alias="cat_hover">360SpeedupOpt_theme/image/cat_hover.png</file>
+        <file>360SpeedupOpt_theme/image/checkbox.png</file>
+        <file alias="disk_check">360SpeedupOpt_theme/image/disk_check.png</file>
+        <file alias="disk_uncheck">360SpeedupOpt_theme/image/disk_uncheck.png</file>
+        <file>360SpeedupOpt_theme/image/net_check.png</file>
+        <file>360SpeedupOpt_theme/image/net_uncheck.png</file>
+        <file>360SpeedupOpt_theme/image/start_check.png</file>
+        <file>360SpeedupOpt_theme/image/start_uncheck.png</file>
+        <file>360SpeedupOpt_theme/image/sys_check.png</file>
+        <file>360SpeedupOpt_theme/image/sys_uncheck.png</file>
+        <file alias="cat_checkbox">360SpeedupOpt_theme/image/cat_checkbox.png</file>
     </qresource>
 </RCC>

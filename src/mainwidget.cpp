@@ -2,11 +2,13 @@
 #include <QPushButton>
 #include "commom/staticbutton.h"
 #include "commom/safebuttonwidget.h"
+#include "commom/speedoutbutton.h"
 #include <QHBoxLayout>
 MainWidget::MainWidget(QWidget *parent)
     : QWidget(parent)
 {
     StaticButton *button = new StaticButton(":/default/clean", 4, this);
+    button->setEnabled(false);
     connect(button, SIGNAL(buttonClicked()), this, SLOT(buttonClicked()));
     m_dyButton = new DynamicButton;
     m_dyButton->setFirstAnim(":/default/enter_anim", 11);
@@ -20,10 +22,15 @@ MainWidget::MainWidget(QWidget *parent)
     safebutton->setIconsInfo(":/default/scan_button_quick_hover", 8,
                              ":/default/scan_button_quick");
 
+    SpeedOutButton *speedButton = new SpeedOutButton(this);
+    speedButton->setIconsInfo(":/default/disk");
+    speedButton->setCheckdStatus(true);
+
     QHBoxLayout *hLayout = new QHBoxLayout;
     hLayout->addWidget(button);
     hLayout->addWidget(m_dyButton);
     hLayout->addWidget(safebutton);
+    hLayout->addWidget(speedButton);
 
     this->setLayout(hLayout);
 }

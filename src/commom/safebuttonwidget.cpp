@@ -1,5 +1,6 @@
 #include "safebuttonwidget.h"
 #include <QPainter>
+#include <QMouseEvent>
 
 SafeButtonWidget::SafeButtonWidget(QWidget *parent) :
     QWidget(parent)
@@ -35,10 +36,32 @@ void SafeButtonWidget::leaveEvent(QEvent *)
     m_dynamicWidget->hide();
 }
 
-void SafeButtonWidget::mousePressEvent(QMouseEvent *)
+void SafeButtonWidget::mousePressEvent(QMouseEvent *e)
 {
+    if (e->button() != Qt::LeftButton) {
+        e->ignore();
+        return;
+    }
     m_dynamicWidget->stopAnim();
     m_dynamicWidget->hide();
     m_staticButton->setButtonStatus(BUTTON_PRESSED);
-    emit buttonClicked();
+}
+
+void SafeButtonWidget::mouseReleaseEvent(QMouseEvent *e)
+{
+    if (e->button() != Qt::LeftButton) {
+        e->ignore();
+        return;
+    }
+
+    if(rect().contains(e->pos()))
+    {
+        m_staticButton->setButtonStatus(BUTTON_ENTER);
+        m_staticButton->repaint();
+        emit buttonClicked();
+        e->accept();
+    }else{
+        m_staticButton->setButtonStatus(BUTTON_LEAVE);
+        e->ignore();
+    }
 }

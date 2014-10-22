@@ -1,6 +1,7 @@
 #include "staticbutton.h"
 #include <QPainter>
 #include <QEvent>
+#include <QMouseEvent>
 
 StaticButton::StaticButton(const QString &icon, int num, QWidget *parent) :
     QWidget(parent), m_num(num)
@@ -17,48 +18,64 @@ StaticButton::StaticButton(const QString &icon, int num, QWidget *parent) :
 
 void StaticButton::setButtonStatus(BUTTONSTATUS status)
 {
-    switch (status) {
-    case BUTTON_ENTER:
-        m_currentPix = m_pixList.at(1);
-        break;
-    case BUTTON_LEAVE:
-        m_currentPix = m_pixList.at(0);
-        break;
-    case BUTTON_PRESSED:
-        m_currentPix = m_pixList.at(2);
-        break;
-    case BUTTON_DISABLE:
+    if(this->isEnabled())
+    {
+        switch (status) {
+        case BUTTON_ENTER:
+            m_currentPix = m_pixList.at(1);
+            break;
+        case BUTTON_LEAVE:
+            m_currentPix = m_pixList.at(0);
+            break;
+        case BUTTON_PRESSED:
+            m_currentPix = m_pixList.at(2);
+            break;
+        default:
+            break;
+        }
+    }else
     {
         if(m_num == 4)
             m_currentPix = m_pixList.at(3);
-    }
-        break;
-    default:
-        break;
     }
     update();
 }
 
 void StaticButton::enterEvent(QEvent *)
 {
-    if(this->isEnabled())
-    {
-        m_currentPix = m_pixList.at(1);
-        update();
-    }
+    setButtonStatus(BUTTON_ENTER);
 }
 
 void StaticButton::leaveEvent(QEvent *)
 {
-    m_currentPix = m_pixList.at(0);
-    update();
+    setButtonStatus(BUTTON_LEAVE);
 }
 
-void StaticButton::mousePressEvent(QMouseEvent *)
+void StaticButton::mousePressEvent(QMouseEvent *e)
 {
-    m_currentPix = m_pixList.at(2);
-    emit buttonClicked();
-    update();
+    if (e->button() != Qt::LeftButton) {
+        e->ignore();
+        return;
+    }
+    setButtonStatus(BUTTON_PRESSED);
+}
+
+void StaticButton::mouseReleaseEvent(QMouseEvent *e)
+{
+    if (e->button() != Qt::LeftButton) {
+        e->ignore();
+        return;
+    }
+
+    if(rect().contains(e->pos()))
+    {
+        emit buttonClicked();
+        setButtonStatus(BUTTON_ENTER);
+        e->accept();
+    }else{
+        setButtonStatus(BUTTON_LEAVE);
+        e->ignore();
+    }
 }
 
 void StaticButton::changeEvent(QEvent *e)
@@ -67,8 +84,7 @@ void StaticButton::changeEvent(QEvent *e)
     {
         if(!this->isEnabled() && (m_num == 4))
         {
-            m_currentPix = m_pixList.at(3);
-            update();
+            setButtonStatus(BUTTON_DISABLE);
         }
     }
 }

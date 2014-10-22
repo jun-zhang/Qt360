@@ -22,14 +22,15 @@ public:
 
     void startFirstAnim();
     void setCheckedState(bool state);
-    void setStatus(BUTTONSTATUS status);
+    void setButtonStatus(BUTTONSTATUS status);
 signals:
     void buttonClicked();
 protected:
     void paintEvent(QPaintEvent *);
     void enterEvent(QEvent *);
     void leaveEvent(QEvent *);
-    void mousePressEvent(QMouseEvent *);
+    void mousePressEvent(QMouseEvent *e);
+    void mouseReleaseEvent(QMouseEvent *e);
     //void changeEvent(QEvent *e);
 private slots:
     void firstAnimFinished();

@@ -1,5 +1,6 @@
 #include "dynamicbutton.h"
 #include <QPainter>
+#include <QMouseEvent>
 
 DynamicButton::DynamicButton(QWidget *parent) :
     QWidget(parent), m_isSelected(true), m_isFirsted(false)
@@ -107,7 +108,7 @@ void DynamicButton::setCheckedState(bool state)
     m_isSelected = state;
 }
 
-void DynamicButton::setStatus(BUTTONSTATUS status)
+void DynamicButton::setButtonStatus(BUTTONSTATUS status)
 {
     if(!m_isFirsted)
         return;
@@ -194,19 +195,37 @@ void DynamicButton::paintEvent(QPaintEvent *)
 
 void DynamicButton::enterEvent(QEvent *)
 {
-    m_status = BUTTON_ENTER;
-    setStatus(m_status);
+    setButtonStatus(BUTTON_ENTER);
 }
 
 void DynamicButton::leaveEvent(QEvent *)
 {
-    m_status = BUTTON_LEAVE;
-    setStatus(m_status);
+    setButtonStatus(BUTTON_LEAVE);
 }
 
-void DynamicButton::mousePressEvent(QMouseEvent *)
+void DynamicButton::mousePressEvent(QMouseEvent *e)
 {
-    m_status = BUTTON_PRESSED;
-    emit buttonClicked();
-    setStatus(m_status);
+    if (e->button() != Qt::LeftButton) {
+        e->ignore();
+        return;
+    }
+    setButtonStatus(BUTTON_PRESSED);
+}
+
+void DynamicButton::mouseReleaseEvent(QMouseEvent *e)
+{
+    if (e->button() != Qt::LeftButton) {
+        e->ignore();
+        return;
+    }
+
+    if(rect().contains(e->pos()))
+    {
+        emit buttonClicked();
+        setButtonStatus(BUTTON_ENTER);
+        e->accept();
+    }else{
+        setButtonStatus(BUTTON_LEAVE);
+        e->ignore();
+    }
 }
