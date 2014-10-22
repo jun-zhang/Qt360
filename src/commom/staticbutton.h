@@ -2,12 +2,14 @@
 #define STATICBUTTON_H
 
 #include <QPushButton>
+#include "common.h"
 
 class StaticButton : public QWidget
 {
     Q_OBJECT
 public:
-    explicit StaticButton(const QString &icon, QWidget *parent = 0);
+    explicit StaticButton(const QString &icon,int num = 4, QWidget *parent = 0);
+    void setButtonStatus(BUTTONSTATUS status);
 signals:
     void buttonClicked();
 protected:
@@ -19,6 +21,7 @@ protected:
 private:
     QPixmap m_currentPix;
     QList<QPixmap> m_pixList;
+    int m_num;
 };
 
 #endif // STATICBUTTON_H

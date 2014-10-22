@@ -4,16 +4,10 @@
 #include <QWidget>
 #include "dynamicwidget.h"
 #include "dynamicscaledwidget.h"
-
+#include "common.h"
 #define INIT_ANIM_COUNT 11
 
-typedef enum{
-    BUTTON_FIRST,
-    BUTTON_SCALED,
-    BUTTON_ENTER,
-    BUTTON_LEAVE,
-    BUTTON_PRESSED
-}BUTTONSTATUS;
+
 
 class DynamicButton : public QWidget
 {

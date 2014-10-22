@@ -32,5 +32,7 @@
         <file alias="registry_anim_gray">OKClean_theme/Image/registry_anim_gray.png</file>
         <file alias="notselect_hover">OKClean_theme/Image/notselect_hover.png</file>
         <file alias="notselect_normal">OKClean_theme/Image/notselect_normal.png</file>
+        <file alias="scan_button_quick">SafeCheck_theme/Images/scan_button_quick.png</file>
+        <file alias="scan_button_quick_hover">SafeCheck_theme/Images/scan_button_quick_hover.png</file>
     </qresource>
 </RCC>
