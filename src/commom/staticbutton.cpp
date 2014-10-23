@@ -4,7 +4,7 @@
 #include <QMouseEvent>
 
 StaticButton::StaticButton(const QString &icon, int num, QWidget *parent) :
-    QWidget(parent), m_num(num)
+    QWidget(parent), m_num(num), m_isCursor(false)
 {
     this->setAttribute(Qt::WA_TranslucentBackground);
     QPixmap pixmap(icon);
@@ -41,14 +41,30 @@ void StaticButton::setButtonStatus(BUTTONSTATUS status)
     update();
 }
 
+void StaticButton::setCursorEnabled(bool enalbed)
+{
+    m_isCursor = enalbed;
+}
+
 void StaticButton::enterEvent(QEvent *)
 {
     setButtonStatus(BUTTON_ENTER);
+    if(m_isCursor)
+    {
+        m_preCursor = cursor();
+        setCursor(Qt::OpenHandCursor);
+    }
+    emit enterSignal();
 }
 
 void StaticButton::leaveEvent(QEvent *)
 {
     setButtonStatus(BUTTON_LEAVE);
+    if(m_isCursor)
+    {
+        setCursor(m_preCursor);
+    }
+    emit leaveSignal();
 }
 
 void StaticButton::mousePressEvent(QMouseEvent *e)
@@ -69,7 +85,8 @@ void StaticButton::mouseReleaseEvent(QMouseEvent *e)
 
     if(rect().contains(e->pos()))
     {
-        emit buttonClicked();
+        if(this->isEnabled())
+            emit buttonClicked();
         setButtonStatus(BUTTON_ENTER);
         e->accept();
     }else{

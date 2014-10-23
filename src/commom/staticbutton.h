@@ -9,9 +9,12 @@ class StaticButton : public QWidget
     Q_OBJECT
 public:
     explicit StaticButton(const QString &icon,int num = 4, QWidget *parent = 0);
+    void setCursorEnabled(bool enalbed);
     void setButtonStatus(BUTTONSTATUS status);
 signals:
     void buttonClicked();
+    void enterSignal();
+    void leaveSignal();
 protected:
     void paintEvent(QPaintEvent *);
     void enterEvent(QEvent *);
@@ -23,6 +26,8 @@ private:
     QPixmap m_currentPix;
     QList<QPixmap> m_pixList;
     int m_num;
+    QCursor m_preCursor;
+    bool m_isCursor;
 };
 
 #endif // STATICBUTTON_H
