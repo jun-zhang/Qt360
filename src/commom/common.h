@@ -1,7 +1,7 @@
 #ifndef COMMON_H
 #define COMMON_H
 
-#define ANIM_LINE_WIDTH 2
+#define ANIM_LINE_WIDTH 3
 typedef enum{
     BUTTON_FIRST,
     BUTTON_SCALED,

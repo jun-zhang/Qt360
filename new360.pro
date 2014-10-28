@@ -22,7 +22,8 @@ SOURCES += main.cpp\
     src/commom/speedoutbutton.cpp \
     src/commom/speedoutbuttonwidget.cpp \
     src/commom/animbuttonwidget.cpp \
-    src/commom/animbuttongroupwidget.cpp
+    src/commom/animbuttongroupwidget.cpp \
+    src/commom/toptabwidget.cpp
 
 HEADERS  += \
     src/mainwidget.h \
@@ -35,7 +36,8 @@ HEADERS  += \
     src/commom/speedoutbutton.h \
     src/commom/speedoutbuttonwidget.h \
     src/commom/animbuttonwidget.h \
-    src/commom/animbuttongroupwidget.h
+    src/commom/animbuttongroupwidget.h \
+    src/commom/toptabwidget.h
 
 RESOURCES += \
     resource/360.qrc

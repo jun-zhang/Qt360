@@ -3,12 +3,14 @@
 #include "commom/staticbutton.h"
 #include "commom/safebuttonwidget.h"
 #include "commom/speedoutbutton.h"
+#include "commom/toptabwidget.h"
 #include <QHBoxLayout>
+#include <QVBoxLayout>
 MainWidget::MainWidget(QWidget *parent)
     : QWidget(parent)
 {
     StaticButton *button = new StaticButton(":/default/clean", 4, this);
-    button->setEnabled(false);
+    //button->setEnabled(false);
     connect(button, SIGNAL(buttonClicked()), this, SLOT(buttonClicked()));
     m_dyButton = new DynamicButton;
     m_dyButton->setFirstAnim(":/default/enter_anim", 11);
@@ -32,7 +34,13 @@ MainWidget::MainWidget(QWidget *parent)
     hLayout->addWidget(safebutton);
     hLayout->addWidget(speedButton);
 
-    this->setLayout(hLayout);
+    TopTabWidget *topWidget = new TopTabWidget;
+
+    QVBoxLayout *vLayout = new QVBoxLayout;
+    vLayout->addLayout(hLayout);
+    vLayout->addWidget(topWidget);
+
+    this->setLayout(vLayout);
 }
 
 void MainWidget::buttonClicked()

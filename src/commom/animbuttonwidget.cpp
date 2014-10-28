@@ -47,9 +47,16 @@ void AnimButtonWidget::setEndX(int x)
 
 void AnimButtonWidget::leaveButton()
 {
-    m_endX = m_originX;
-    if(!m_timer->isActive())
-        m_timer->start();
+    if(m_currentX != m_originX)
+    {
+        m_endX = m_originX;
+        if(m_currentX > m_originX)
+            m_isRightOri = true;
+        else
+            m_isRightOri = false;
+        if(!m_timer->isActive())
+            m_timer->start();
+    }
 }
 
 void AnimButtonWidget::updateAnim()
@@ -73,6 +80,28 @@ void AnimButtonWidget::updateAnim()
         }else
         {
             m_currentX -= m_perLength;
+        }
+    }else if(m_endX == m_originX) //回到原点
+    {
+        if(m_isRightOri)
+        {
+            if(m_currentX <= m_endX)
+            {
+                m_currentX = m_endX;
+                m_timer->stop();
+            }else
+            {
+                m_currentX -= m_perLength;
+            }
+        }else{
+            if(m_currentX >= m_endX)
+            {
+                m_currentX = m_endX;
+                m_timer->stop();
+            }else
+            {
+                m_currentX += m_perLength;
+            }
         }
     }
     update();

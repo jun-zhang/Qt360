@@ -46,5 +46,9 @@
         <file>360SpeedupOpt_theme/image/sys_check.png</file>
         <file>360SpeedupOpt_theme/image/sys_uncheck.png</file>
         <file alias="cat_checkbox">360SpeedupOpt_theme/image/cat_checkbox.png</file>
+        <file alias="tab_ignore">360SpeedupOpt_theme/image/tab_ignore.png</file>
+        <file alias="tab_opt">360SpeedupOpt_theme/image/tab_opt.png</file>
+        <file alias="tab_boottime">360SpeedupOpt_theme/image/tab_boottime.png</file>
+        <file alias="tab_start">360SpeedupOpt_theme/image/tab_start.png</file>
     </qresource>
 </RCC>
