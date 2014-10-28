@@ -2,7 +2,7 @@
 #define MAINWIDGET_H
 
 #include <QWidget>
-#include "commom/dynamicbutton.h"
+#include "../commom/dynamicbutton.h"
 
 class MainWidget : public QWidget
 {

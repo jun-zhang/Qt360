@@ -1,9 +1,9 @@
 #include "mainwidget.h"
 #include <QPushButton>
-#include "commom/staticbutton.h"
-#include "commom/safebuttonwidget.h"
-#include "commom/speedoutbutton.h"
-#include "commom/toptabwidget.h"
+#include "../commom/staticbutton.h"
+#include "../commom/safebuttonwidget.h"
+#include "../commom/speedoutbutton.h"
+#include "../commom/toptabwidget.h"
 #include <QHBoxLayout>
 #include <QVBoxLayout>
 MainWidget::MainWidget(QWidget *parent)

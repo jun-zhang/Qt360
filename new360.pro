@@ -13,7 +13,6 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-    src/mainwidget.cpp \
     src/commom/staticbutton.cpp \
     src/commom/dynamicbutton.cpp \
     src/commom/dynamicwidget.cpp \
@@ -23,7 +22,13 @@ SOURCES += main.cpp\
     src/commom/speedoutbuttonwidget.cpp \
     src/commom/animbuttonwidget.cpp \
     src/commom/animbuttongroupwidget.cpp \
-    src/commom/toptabwidget.cpp
+    src/commom/toptabwidget.cpp \
+    src/test/mainwidget.cpp \
+    src/main/mainbottomwidget.cpp \
+    src/main/maintopwidget.cpp \
+    src/commom/basestylewidget.cpp \
+    src/commom/sysbuttongroup.cpp \
+    src/commom/numanimwidget.cpp
 
 HEADERS  += \
     src/mainwidget.h \
@@ -37,7 +42,13 @@ HEADERS  += \
     src/commom/speedoutbuttonwidget.h \
     src/commom/animbuttonwidget.h \
     src/commom/animbuttongroupwidget.h \
-    src/commom/toptabwidget.h
+    src/commom/toptabwidget.h \
+    src/test/mainwidget.h \
+    src/main/mainbottomwidget.h \
+    src/main/maintopwidget.h \
+    src/commom/basestylewidget.h \
+    src/commom/sysbuttongroup.h \
+    src/commom/numanimwidget.h
 
 RESOURCES += \
     resource/360.qrc

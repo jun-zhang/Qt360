@@ -11,8 +11,10 @@ SafeButtonWidget::SafeButtonWidget(QWidget *parent) :
 void SafeButtonWidget::setIconsInfo(const QString &animIcons, int animNum, const QString &normalIcons, int normalNum)
 {
     m_staticButton = new StaticButton(normalIcons, normalNum, this);
+    m_staticButton->setAttribute(Qt::WA_TransparentForMouseEvents); //屏蔽子窗口事件
     m_dynamicWidget = new DynamicWidget(this);
     m_dynamicWidget->setInfo(animNum, QPixmap(animIcons));
+    m_dynamicWidget->setAttribute(Qt::WA_TransparentForMouseEvents); //屏蔽子窗口事件
     this->setFixedSize(m_staticButton->size());
 
     m_staticButton->move(0, 0);
@@ -25,7 +27,7 @@ void SafeButtonWidget::enterEvent(QEvent *)
 {
     m_staticButton->setButtonStatus(BUTTON_ENTER);
     m_dynamicWidget->show();
-    m_dynamicWidget->raise();
+    //m_dynamicWidget->raise();
     m_dynamicWidget->startClockwise();
 }
 
@@ -39,7 +41,6 @@ void SafeButtonWidget::leaveEvent(QEvent *)
 void SafeButtonWidget::mousePressEvent(QMouseEvent *e)
 {
     if (e->button() != Qt::LeftButton) {
-        e->ignore();
         return;
     }
     m_dynamicWidget->stopAnim();
@@ -50,18 +51,15 @@ void SafeButtonWidget::mousePressEvent(QMouseEvent *e)
 void SafeButtonWidget::mouseReleaseEvent(QMouseEvent *e)
 {
     if (e->button() != Qt::LeftButton) {
-        e->ignore();
         return;
     }
 
     if(rect().contains(e->pos()))
     {
         m_staticButton->setButtonStatus(BUTTON_ENTER);
-        m_staticButton->repaint();
+        //m_staticButton->raise();
         emit buttonClicked();
-        e->accept();
     }else{
         m_staticButton->setButtonStatus(BUTTON_LEAVE);
-        e->ignore();
     }
 }
