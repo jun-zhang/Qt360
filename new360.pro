@@ -28,7 +28,8 @@ SOURCES += main.cpp\
     src/main/maintopwidget.cpp \
     src/commom/basestylewidget.cpp \
     src/commom/sysbuttongroup.cpp \
-    src/commom/numanimwidget.cpp
+    src/commom/numanimwidget.cpp \
+    src/commom/numbersanimwidget.cpp
 
 HEADERS  += \
     src/mainwidget.h \
@@ -48,7 +49,8 @@ HEADERS  += \
     src/main/maintopwidget.h \
     src/commom/basestylewidget.h \
     src/commom/sysbuttongroup.h \
-    src/commom/numanimwidget.h
+    src/commom/numanimwidget.h \
+    src/commom/numbersanimwidget.h
 
 RESOURCES += \
     resource/360.qrc

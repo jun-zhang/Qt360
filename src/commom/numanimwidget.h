@@ -10,7 +10,7 @@ class NumAnimWidget : public QWidget
     Q_OBJECT
 public:
     explicit NumAnimWidget(QWidget *parent = 0);
-    void setInitNum(int num);
+    void setInitInfo(const QString &iconPath, int num);
     void setNum(int num);
 private slots:
     void updatePix();
@@ -21,6 +21,7 @@ private:
     QPixmap m_currentPix;
     QPixmap m_prePix;
     QTimer *m_timer;
+    QString m_iconPath;
     int m_pixY;
     int m_endY;
     bool m_isInit;
