@@ -65,6 +65,23 @@ void MainScoreWidget::initButtonLayout()
     m_stackedWidget->addWidget(reStaticButton);
 }
 
+void MainScoreWidget::setButtonStatus(int status)
+{
+    switch (status) {
+    case SCORE_NO_BUTTON:
+        m_stackedWidget->hide();
+        break;
+    case SCORE_CANCLE_BUTTON:
+    case SCORE_FIX_BUTTON:
+    case SCORE_EXCLAMATION:
+        m_stackedWidget->show();
+        m_stackedWidget->setCurrentIndex(status);
+        break;
+    default:
+        break;
+    }
+}
+
 void MainScoreWidget::setScoreStatus(int status)
 {
     m_scoreWidget->setScoreStatus(status);

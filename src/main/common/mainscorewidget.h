@@ -2,6 +2,7 @@
 #define MAINSCOREWIDGET_H
 
 #include <QWidget>
+
 class QLabel;
 class ScoreWidget;
 class QStackedWidget;
@@ -14,6 +15,7 @@ public:
     void setScoreStatus(int status);
     void setNums(int num);
     void setTextInfo(const QString &topText, const QString &bottomText);
+    void setButtonStatus(int status);
 signals:
     void cancleExamine();
     void oneFix();

@@ -21,8 +21,16 @@ void MainTopWidget::viewClicked()
 
 }
 
+void MainTopWidget::setNums(int num)
+{
+
+}
+
 void MainTopWidget::paintEvent(QPaintEvent *)
 {
-    QPainter painter(this);
-    painter.drawPixmap(0, 0, this->width(), this->height(), QPixmap(":/0_big.png"));
+    if(m_type != 0)
+    {
+        QPainter painter(this);
+        painter.drawPixmap();
+    }
 }

@@ -9,6 +9,10 @@ class MainTopWidget : public BaseStyleWidget
 public:
     explicit MainTopWidget(QWidget *parent = 0);
     void setSkinType(int type);
+public slots:
+    void setNums(int num);
+signals:
+
 protected:
     void paintEvent(QPaintEvent *);
 private slots:
@@ -18,6 +22,8 @@ private:
     void initUI();
 private:
     int m_type;
+    QPixmap m_guangYPix;
+    QColor m_backgroundColor;
 };
 
 #endif // MAINTOPWIDGET_H
