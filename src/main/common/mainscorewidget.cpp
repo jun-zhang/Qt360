@@ -73,9 +73,11 @@ void MainScoreWidget::setButtonStatus(int status)
         break;
     case SCORE_CANCLE_BUTTON:
     case SCORE_FIX_BUTTON:
-    case SCORE_EXCLAMATION:
+    case SCORE_RE_BUTTON:
+    {
         m_stackedWidget->show();
         m_stackedWidget->setCurrentIndex(status);
+    }
         break;
     default:
         break;

@@ -77,6 +77,21 @@
         <file alias="btn_fix_all">default_theme/MainFrame/Image/btn_fix_all.png</file>
         <file alias="btn_fix_background">default_theme/MainFrame/Image/btn_fix_background.png</file>
         <file alias="btn_reexamine">default_theme/MainFrame/Image/btn_reexamine.png</file>
+        <file alias="logo">default_theme/360logo.png</file>
+        <file alias="update_btn">default_theme/Update/update_btn.png</file>
+        <file>default_theme/360Protect/Image/guardline.png</file>
+        <file>default_theme/360Protect/Image/payinsure_risky_hover.png</file>
+        <file>default_theme/360Protect/Image/payinsure_risky_normal.png</file>
+        <file>default_theme/360Protect/Image/payinsure_risky_press.png</file>
+        <file>default_theme/360Protect/Image/payinsure_safe_hover.png</file>
+        <file>default_theme/360Protect/Image/payinsure_safe_normal.png</file>
+        <file>default_theme/360Protect/Image/payinsure_safe_press.png</file>
+        <file>default_theme/360Protect/Image/security_risky_hover.png</file>
+        <file>default_theme/360Protect/Image/security_risky_normal.png</file>
+        <file>default_theme/360Protect/Image/security_risky_press.png</file>
+        <file>default_theme/360Protect/Image/security_safe_hover.png</file>
+        <file>default_theme/360Protect/Image/security_safe_normal.png</file>
+        <file>default_theme/360Protect/Image/security_safe_press.png</file>
     </qresource>
     <qresource prefix="/numbers/main">
         <file alias="0">default_theme/font/tijian_score/0.png</file>
