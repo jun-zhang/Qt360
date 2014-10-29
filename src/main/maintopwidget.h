@@ -11,6 +11,9 @@ public:
     void setSkinType(int type);
 protected:
     void paintEvent(QPaintEvent *);
+private slots:
+    void examineClicked();
+    void viewClicked();
 private:
     void initUI();
 private:

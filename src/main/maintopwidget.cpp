@@ -6,6 +6,21 @@ MainTopWidget::MainTopWidget(QWidget *parent) :
 
 }
 
+void MainTopWidget::setSkinType(int type)
+{
+
+}
+
+void MainTopWidget::examineClicked()
+{
+
+}
+
+void MainTopWidget::viewClicked()
+{
+
+}
+
 void MainTopWidget::paintEvent(QPaintEvent *)
 {
     QPainter painter(this);

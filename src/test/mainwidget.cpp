@@ -56,7 +56,7 @@ MainWidget::MainWidget(QWidget *parent)
 
 void MainWidget::updateNum()
 {
-    m_numsWidget->setNums(1120);
+    m_numsWidget->setNums(1000);
 }
 
 void MainWidget::buttonClicked()

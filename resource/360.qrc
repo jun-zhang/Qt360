@@ -54,10 +54,10 @@
     <qresource prefix="/main">
         <file>default_theme/MainFrame/Image/AboutLogo.png</file>
         <file>default_theme/MainFrame/Image/background_mainwnd.jpg</file>
-        <file>default_theme/MainFrame/Image/btn_examine_now.png</file>
-        <file>default_theme/MainFrame/Image/btn_scan_background.png</file>
-        <file>default_theme/MainFrame/Image/btn_view_detail.png</file>
-        <file>default_theme/MainFrame/Image/examine_score.png</file>
+        <file alias="btn_examine_now">default_theme/MainFrame/Image/btn_examine_now.png</file>
+        <file alias="btn_scan_background">default_theme/MainFrame/Image/btn_scan_background.png</file>
+        <file alias="btn_view_detail">default_theme/MainFrame/Image/btn_view_detail.png</file>
+        <file alias="examine_score">default_theme/MainFrame/Image/examine_score.png</file>
         <file alias="menu">default_theme/MainFrame/Image/Menu.png</file>
         <file alias="playvideo">default_theme/MainFrame/Image/playvideo.png</file>
         <file alias="skin">default_theme/MainFrame/Image/Skin.png</file>
@@ -66,8 +66,17 @@
         <file>default_theme/MainFrame/Image/score_bkg_green.png</file>
         <file>default_theme/MainFrame/Image/score_bkg_red.png</file>
         <file>default_theme/MainFrame/Image/score_bkg_yellow.png</file>
-        <file>default_theme/MainFrame/Image/question.png</file>
-        <file>default_theme/MainFrame/Image/exclamation.png</file>
+        <file alias="question">default_theme/MainFrame/Image/question.png</file>
+        <file alias="exclamation">default_theme/MainFrame/Image/exclamation.png</file>
+        <file alias="wenli">default_theme/wenli.png</file>
+        <file alias="guangyun_yellow">default_theme/guangyun_yellow.png</file>
+        <file alias="guangyun_orange">default_theme/guangyun_orange.png</file>
+        <file alias="guangyun_green">default_theme/guangyun_green.png</file>
+        <file alias="return">default_theme/return.png</file>
+        <file alias="fen">default_theme/MainFrame/Image/fen.png</file>
+        <file alias="btn_fix_all">default_theme/MainFrame/Image/btn_fix_all.png</file>
+        <file alias="btn_fix_background">default_theme/MainFrame/Image/btn_fix_background.png</file>
+        <file alias="btn_reexamine">default_theme/MainFrame/Image/btn_reexamine.png</file>
     </qresource>
     <qresource prefix="/numbers/main">
         <file alias="0">default_theme/font/tijian_score/0.png</file>
@@ -80,5 +89,8 @@
         <file alias="7">default_theme/font/tijian_score/7.png</file>
         <file alias="8">default_theme/font/tijian_score/8.png</file>
         <file alias="9">default_theme/font/tijian_score/9.png</file>
+    </qresource>
+    <qresource prefix="/qss">
+        <file alias="default">qss/default.qss</file>
     </qresource>
 </RCC>

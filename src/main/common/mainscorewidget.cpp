@@ -1,0 +1,84 @@
+#include "mainscorewidget.h"
+#include "../../commom/staticbutton.h"
+#include "scorewidget.h"
+#include "buttonlabel.h"
+#include <QLabel>
+#include <QVBoxLayout>
+#include <QHBoxLayout>
+#include <QStackedWidget>
+
+MainScoreWidget::MainScoreWidget(QWidget *parent) :
+    QWidget(parent)
+{
+    this->initUI();
+}
+
+void MainScoreWidget::initUI()
+{
+    m_scoreWidget = new ScoreWidget;
+    m_topLabel = new QLabel;
+    m_topLabel->setObjectName("topLabel");
+    m_bottomLabel = new QLabel;
+    m_bottomLabel->setObjectName("bottomlabel");
+
+    QVBoxLayout *vLayout = new QVBoxLayout;
+    vLayout->addWidget(m_topLabel);
+    vLayout->addWidget(m_bottomLabel);
+    vLayout->setSpacing(5);
+    vLayout->setContentsMargins(0, 0, 0, 0);
+
+    this->initButtonLayout();
+    QHBoxLayout *hLayout = new QHBoxLayout;
+    hLayout->addWidget(m_scoreWidget);
+    hLayout->addSpacing(10);
+    hLayout->addLayout(vLayout);
+    hLayout->addWidget(m_stackedWidget, 0, Qt::AlignRight | Qt::AlignVCenter);
+    hLayout->setContentsMargins(10, 5, 10, 5);
+
+    this->setLayout(hLayout);
+}
+
+void MainScoreWidget::initButtonLayout()
+{
+    m_stackedWidget = new QStackedWidget;
+    ButtonLabel *cancleButton = new ButtonLabel;
+    cancleButton->setText("取消体检");
+    connect(cancleButton, SIGNAL(labelClicked()), this, SIGNAL(cancleExamine()));
+
+    QWidget *fixWidget = new QWidget;
+    StaticButton *fixButton = new StaticButton(":/main/btn_fix_all");
+    connect(fixButton, SIGNAL(buttonClicked()), this, SIGNAL(oneFix()));
+    ButtonLabel *reExamineButton = new ButtonLabel;
+    reExamineButton->setText("重新体检");
+    connect(reExamineButton, SIGNAL(labelClicked()), this, SIGNAL(reExamine()));
+
+    QVBoxLayout *fixVLayout = new QVBoxLayout;
+    fixVLayout->addWidget(fixButton);
+    fixVLayout->addWidget(reExamineButton);
+    fixWidget->setLayout(fixVLayout);
+
+    StaticButton *reStaticButton = new StaticButton(":/main/btn_reexamine");
+    connect(reStaticButton, SIGNAL(buttonClicked()), this, SIGNAL(reExamine()));
+
+    m_stackedWidget->addWidget(cancleButton);
+    m_stackedWidget->addWidget(fixWidget);
+    m_stackedWidget->addWidget(reStaticButton);
+}
+
+void MainScoreWidget::setScoreStatus(int status)
+{
+    m_scoreWidget->setScoreStatus(status);
+}
+
+void MainScoreWidget::setNums(int num)
+{
+    m_scoreWidget->setNums(num);
+}
+
+void MainScoreWidget::setTextInfo(const QString &topText, const QString &bottomText)
+{
+    m_topLabel->setText(topText);
+    m_topLabel->adjustSize();
+    m_bottomLabel->setText(bottomText);
+    m_bottomLabel->adjustSize();
+}
