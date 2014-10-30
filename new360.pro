@@ -56,7 +56,8 @@ HEADERS  += \
     src/commom/numbersanimwidget.h \
     src/main/common/scorewidget.h \
     src/main/common/mainscorewidget.h \
-    src/main/common/buttonlabel.h
+    src/main/common/buttonlabel.h \
+    src/commom/threebutton.h
 
 RESOURCES += \
     resource/360.qrc
