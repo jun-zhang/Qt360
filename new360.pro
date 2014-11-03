@@ -31,8 +31,11 @@ SOURCES += main.cpp\
     src/commom/numanimwidget.cpp \
     src/commom/numbersanimwidget.cpp \
     src/main/common/scorewidget.cpp \
-    src/main/common/mainscorewidget.cpp \
-    src/main/common/buttonlabel.cpp
+    src/main/common/buttonlabel.cpp \
+    src/main/common/backgroundbutton.cpp \
+    src/main/top/mainscorewidget.cpp \
+    src/main/top/userwidget.cpp \
+    src/main/top/topbottomwidget.cpp
 
 HEADERS  += \
     src/mainwidget.h \
@@ -55,9 +58,12 @@ HEADERS  += \
     src/commom/numanimwidget.h \
     src/commom/numbersanimwidget.h \
     src/main/common/scorewidget.h \
-    src/main/common/mainscorewidget.h \
     src/main/common/buttonlabel.h \
-    src/commom/threebutton.h
+    src/commom/threebutton.h \
+    src/main/common/backgroundbutton.h \
+    src/main/top/mainscorewidget.h \
+    src/main/top/userwidget.h \
+    src/main/top/topbottomwidget.h
 
 RESOURCES += \
     resource/360.qrc

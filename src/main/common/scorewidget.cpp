@@ -1,6 +1,8 @@
 #include "scorewidget.h"
 #include <QPainter>
 #include "../../commom/numbersanimwidget.h"
+#include "../../commom/common.h"
+
 ScoreWidget::ScoreWidget(QWidget *parent) :
     QWidget(parent)
 {
@@ -11,7 +13,7 @@ ScoreWidget::ScoreWidget(QWidget *parent) :
 
     m_numWidget = new NumbersAnimWidget(this);
     m_numWidget->setInitInfo(100, 3, ":/numbers/main/");
-    m_numWidget->move((width()-m_numWidget->width())/2, (height() - m_numWidget->height())/2);
+    m_numWidget->move((width()-m_numWidget->width())/2 - 30, (height() - m_numWidget->height())/2);
     m_numWidget->hide();
 }
 
@@ -38,6 +40,7 @@ void ScoreWidget::setScoreStatus(int status)
 
 void ScoreWidget::setNums(int num)
 {
+    this->setScoreStatus(SCORE_NUMBERS);
     m_numWidget->setNums(num);
 }
 
@@ -52,7 +55,7 @@ void ScoreWidget::paintEvent(QPaintEvent *)
     }else if(m_status == SCORE_NUMBERS)
     {
         painter.drawPixmap(m_numWidget->x() + m_numWidget->width(), \
-                           m_numWidget->y() + m_numWidget->height() - m_fenPix.height() - 10, \
+                           m_numWidget->y() + m_numWidget->height() - m_fenPix.height() - 20, \
                            m_fenPix.width(), m_fenPix.height(), m_fenPix);
     }
 }

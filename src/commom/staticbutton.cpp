@@ -49,13 +49,14 @@ void StaticButton::setOneButtonInfo(const QString &icon, int num)
 
 void StaticButton::setDivisionButtonInfo(const QString &icon, int num)
 {
-    m_pixList.append(QPixmap(icon + "normal"));
-    m_pixList.append(QPixmap(icon + "hover"));
-    m_pixList.append(QPixmap(icon + "press"));
+    m_pixList.append(QPixmap(icon + "_normal"));
+    m_pixList.append(QPixmap(icon + "_hover"));
+    m_pixList.append(QPixmap(icon + "_press"));
     if(num == 4)
-        m_pixList.append(QPixmap(icon + "disable"));
+        m_pixList.append(QPixmap(icon + "_disable"));
     m_num = num;
-    this->setFixedSize(QPixmap(icon + "normal").size());
+    m_currentPix = m_pixList.at(0);
+    this->setFixedSize(QPixmap(icon + "_normal").size());
 }
 
 void StaticButton::setButtonStatus(BUTTONSTATUS status)

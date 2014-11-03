@@ -5,7 +5,7 @@
 ButtonLabel::ButtonLabel(QWidget *parent) :
     QLabel(parent)
 {
-    this->setObjectName("buttonlabel");
+    //this->setObjectName("buttonlabel");
 }
 
 void ButtonLabel::setMouseClicked(bool isClicked)
@@ -52,9 +52,15 @@ void ButtonLabel::enterEvent(QEvent *)
 {
     m_preCursor = cursor();
     setCursor(Qt::OpenHandCursor);
+    QFont font = this->font();
+    font.setUnderline(true);
+    emit enterSignal();
 }
 
 void ButtonLabel::leaveEvent(QEvent *)
 {
     setCursor(m_preCursor);
+    QFont font = this->font();
+    font.setUnderline(false);
+    emit leaveSignal();
 }

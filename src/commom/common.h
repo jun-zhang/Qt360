@@ -18,5 +18,10 @@ typedef enum{
     SCORE_RE_BUTTON
 }SCOREBUTTONSTATUS;
 
+typedef enum{
+    SCORE_QUESTION,
+    SCORE_EXCLAMATION,
+    SCORE_NUMBERS
+}SCORESTATUS;
 
 #endif // COMMON_H

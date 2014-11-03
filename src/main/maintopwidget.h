@@ -6,6 +6,11 @@
 #include "../commom/basestylewidget.h"
 class QPropertyAnimation;
 class QStackedWidget;
+class QParallelAnimationGroup;
+class UserWidget;
+class TopBottomWidget;
+class MainScoreWidget;
+
 class MainTopWidget : public BaseStyleWidget
 {
     Q_OBJECT
@@ -29,14 +34,19 @@ signals:
     void closeWidget();
 protected:
     void paintEvent(QPaintEvent *);
+    void resizeEvent(QResizeEvent *);
 private slots:
     void examineClicked();
     void viewClicked();
     void returnMain();
+    void returnAnimationFinished();
 private:
     void initUI();
     void initTopTitleWidget();
     void initData();
+    void initConnect();
+    void initAnimations();
+    void updateSizeAndPos();
 private:
     int m_type;
     int m_num;
@@ -48,6 +58,11 @@ private:
     QPropertyAnimation *m_toYellow;
     QWidget *m_titleWidget;
     QStackedWidget *m_titleStacked;
+    UserWidget *m_userWidget;
+    MainScoreWidget *m_scoreWidget;
+    TopBottomWidget *m_bottomWidget;
+    QParallelAnimationGroup *m_examineGroupAnimation;
+    QParallelAnimationGroup *m_returnGroupAnimation;
 };
 
 #endif // MAINTOPWIDGET_H

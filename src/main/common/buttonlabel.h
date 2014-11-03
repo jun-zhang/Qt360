@@ -12,6 +12,8 @@ public:
     void setMouseClicked(bool isClicked);
 signals:
     void labelClicked();
+    void enterSignal();
+    void leaveSignal();
 protected:
     void enterEvent(QEvent *);
     void leaveEvent(QEvent *);

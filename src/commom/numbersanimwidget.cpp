@@ -19,7 +19,7 @@ void NumbersAnimWidget::setInitInfo(int num, int digits, const QString &iconPath
         m_numsList.append(numWidget);
         hLayout->addWidget(numWidget);
     }
-    hLayout->addStretch();
+    //hLayout->addStretch();
     hLayout->setSpacing(0);
     hLayout->setContentsMargins(0, 0, 0, 0);
 

@@ -2,11 +2,7 @@
 #define SCOREWIDGET_H
 
 #include <QWidget>
-typedef enum{
-    SCORE_QUESTION,
-    SCORE_EXCLAMATION,
-    SCORE_NUMBERS
-}SCORESTATUS;
+
 
 class NumbersAnimWidget;
 class ScoreWidget : public QWidget

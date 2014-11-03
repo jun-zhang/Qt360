@@ -50,6 +50,7 @@
         <file alias="tab_opt">360SpeedupOpt_theme/image/tab_opt.png</file>
         <file alias="tab_boottime">360SpeedupOpt_theme/image/tab_boottime.png</file>
         <file alias="tab_start">360SpeedupOpt_theme/image/tab_start.png</file>
+        <file>safeid_new_theme/image/priv_btn.png</file>
     </qresource>
     <qresource prefix="/main">
         <file>default_theme/MainFrame/Image/AboutLogo.png</file>
@@ -79,19 +80,21 @@
         <file alias="btn_reexamine">default_theme/MainFrame/Image/btn_reexamine.png</file>
         <file alias="logo">default_theme/360logo.png</file>
         <file alias="update_btn">default_theme/Update/update_btn.png</file>
-        <file>default_theme/360Protect/Image/guardline.png</file>
-        <file>default_theme/360Protect/Image/payinsure_risky_hover.png</file>
-        <file>default_theme/360Protect/Image/payinsure_risky_normal.png</file>
-        <file>default_theme/360Protect/Image/payinsure_risky_press.png</file>
-        <file>default_theme/360Protect/Image/payinsure_safe_hover.png</file>
-        <file>default_theme/360Protect/Image/payinsure_safe_normal.png</file>
-        <file>default_theme/360Protect/Image/payinsure_safe_press.png</file>
-        <file>default_theme/360Protect/Image/security_risky_hover.png</file>
-        <file>default_theme/360Protect/Image/security_risky_normal.png</file>
-        <file>default_theme/360Protect/Image/security_risky_press.png</file>
-        <file>default_theme/360Protect/Image/security_safe_hover.png</file>
-        <file>default_theme/360Protect/Image/security_safe_normal.png</file>
-        <file>default_theme/360Protect/Image/security_safe_press.png</file>
+        <file alias="guardline">default_theme/360Protect/Image/guardline.png</file>
+        <file alias="payinsure_risky_hover">default_theme/360Protect/Image/payinsure_risky_hover.png</file>
+        <file alias="payinsure_risky_normal">default_theme/360Protect/Image/payinsure_risky_normal.png</file>
+        <file alias="payinsure_risky_press">default_theme/360Protect/Image/payinsure_risky_press.png</file>
+        <file alias="payinsure_safe_hover">default_theme/360Protect/Image/payinsure_safe_hover.png</file>
+        <file alias="payinsure_safe_normal">default_theme/360Protect/Image/payinsure_safe_normal.png</file>
+        <file alias="payinsure_safe_press">default_theme/360Protect/Image/payinsure_safe_press.png</file>
+        <file alias="security_risky_hover">default_theme/360Protect/Image/security_risky_hover.png</file>
+        <file alias="security_risky_normal">default_theme/360Protect/Image/security_risky_normal.png</file>
+        <file alias="security_risky_press">default_theme/360Protect/Image/security_risky_press.png</file>
+        <file alias="security_safe_hover">default_theme/360Protect/Image/security_safe_hover.png</file>
+        <file alias="security_safe_normal">default_theme/360Protect/Image/security_safe_normal.png</file>
+        <file alias="security_safe_press">default_theme/360Protect/Image/security_safe_press.png</file>
+        <file alias="def_head">safeid_new_theme/image/def_head.png</file>
+        <file alias="head_bkg">safeid_new_theme/image/head_bkg.png</file>
     </qresource>
     <qresource prefix="/numbers/main">
         <file alias="0">default_theme/font/tijian_score/0.png</file>

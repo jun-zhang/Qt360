@@ -1,7 +1,7 @@
 #include "mainscorewidget.h"
 #include "../../commom/staticbutton.h"
-#include "scorewidget.h"
-#include "buttonlabel.h"
+#include "../common/scorewidget.h"
+#include "../common/buttonlabel.h"
 #include <QLabel>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
@@ -17,14 +17,16 @@ void MainScoreWidget::initUI()
 {
     m_scoreWidget = new ScoreWidget;
     m_topLabel = new QLabel;
-    m_topLabel->setObjectName("topLabel");
+    m_topLabel->setObjectName("toplabel");
     m_bottomLabel = new QLabel;
     m_bottomLabel->setObjectName("bottomlabel");
 
     QVBoxLayout *vLayout = new QVBoxLayout;
-    vLayout->addWidget(m_topLabel);
-    vLayout->addWidget(m_bottomLabel);
-    vLayout->setSpacing(5);
+    vLayout->addStretch();
+    vLayout->addWidget(m_topLabel, 0, Qt::AlignVCenter | Qt::AlignLeft);
+    vLayout->addWidget(m_bottomLabel, 0, Qt::AlignVCenter | Qt::AlignLeft);
+    vLayout->addStretch();
+    vLayout->setSpacing(10);
     vLayout->setContentsMargins(0, 0, 0, 0);
 
     this->initButtonLayout();
@@ -36,6 +38,7 @@ void MainScoreWidget::initUI()
     hLayout->setContentsMargins(10, 5, 10, 5);
 
     this->setLayout(hLayout);
+    this->setFixedHeight(m_scoreWidget->height() + 10);
 }
 
 void MainScoreWidget::initButtonLayout()
