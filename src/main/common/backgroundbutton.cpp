@@ -2,16 +2,25 @@
 #include <QPainter>
 #include <QEvent>
 #include <QMouseEvent>
+#include <QLabel>
+#include <QVBoxLayout>
 
 BackgroundButton::BackgroundButton(QWidget *parent) :
     QWidget(parent), m_isCursor(false)
 {
     this->setAttribute(Qt::WA_TranslucentBackground);
+    m_foreLabel = new QLabel;
+    m_textLabel = new QLabel;
+    m_textLabel->hide();
+    QVBoxLayout *vLayout = new QVBoxLayout;
+    vLayout->addWidget(m_foreLabel, 0, Qt::AlignCenter);
+    vLayout->addWidget(m_textLabel, 0, Qt::AlignHCenter);
+
+    this->setLayout(vLayout);
 }
 
 void BackgroundButton::setIconsInfo(const QString &fore, const QString &back, int start, int num)
 {
-    m_forePix.load(fore);
     QPixmap tmpPix(back);
     QColor spaceColor(Qt::white);
     spaceColor.setAlpha(0);
@@ -29,6 +38,15 @@ void BackgroundButton::setIconsInfo(const QString &fore, const QString &back, in
     }
     m_backPix = m_pixList.at(0);
     this->setFixedSize(tmpPix.width()/num, tmpPix.height());
+    QPixmap forePix(fore);
+    m_foreLabel->setPixmap(forePix);
+    m_foreLabel->setFixedSize(forePix.size());
+}
+
+void BackgroundButton::setText(const QString &text)
+{
+    m_textLabel->setText(text);
+    m_textLabel->show();
 }
 
 void BackgroundButton::setButtonStatus(BUTTONSTATUS status)
@@ -109,5 +127,4 @@ void BackgroundButton::paintEvent(QPaintEvent *)
 {
     QPainter painter(this);
     painter.drawPixmap(rect(), m_backPix);
-    painter.drawPixmap((width()-m_forePix.width())/2, (height()-m_forePix.height())/2, m_forePix);
 }

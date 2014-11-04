@@ -35,7 +35,11 @@ SOURCES += main.cpp\
     src/main/common/backgroundbutton.cpp \
     src/main/top/mainscorewidget.cpp \
     src/main/top/userwidget.cpp \
-    src/main/top/topbottomwidget.cpp
+    src/main/top/topbottomwidget.cpp \
+    src/main/bottom/mainbottomfirstwidget.cpp \
+    src/main/bottom/mainexaminewidget.cpp \
+    src/main/mainwindow.cpp \
+    src/main/common/shadowwidget.cpp
 
 HEADERS  += \
     src/mainwidget.h \
@@ -63,7 +67,11 @@ HEADERS  += \
     src/main/common/backgroundbutton.h \
     src/main/top/mainscorewidget.h \
     src/main/top/userwidget.h \
-    src/main/top/topbottomwidget.h
+    src/main/top/topbottomwidget.h \
+    src/main/bottom/mainbottomfirstwidget.h \
+    src/main/bottom/mainexaminewidget.h \
+    src/main/mainwindow.h \
+    src/main/common/shadowwidget.h
 
 RESOURCES += \
     resource/360.qrc

@@ -1,5 +1,5 @@
 #include "src/test/mainwidget.h"
-#include "src/main/maintopwidget.h"
+#include "src/main/mainwindow.h"
 #include <QApplication>
 #include <QTextCodec>
 #include <QFile>
@@ -18,9 +18,8 @@ int main(int argc, char *argv[])
 
 //    MainWidget w;
 //    w.show();
-    MainTopWidget *w = new MainTopWidget;
+    MainWindow *w = new MainWindow;
     w->show();
-    w->setNums(85);
 
     return a.exec();
 }

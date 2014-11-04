@@ -213,6 +213,7 @@ void MainTopWidget::returnMain()
     m_bottomWidget->setStackedButton(0);
     m_scoreWidget->setButtonStatus(SCORE_NO_BUTTON);
     m_returnGroupAnimation->start();
+    emit goMain();
 }
 
 void MainTopWidget::examineClicked()
@@ -223,6 +224,7 @@ void MainTopWidget::examineClicked()
     m_scoreWidget->setButtonStatus(SCORE_FIX_BUTTON);
     m_scoreWidget->setNums(85);
     m_examineGroupAnimation->start();
+    emit goExamine();
 }
 
 void MainTopWidget::viewClicked()
@@ -231,6 +233,7 @@ void MainTopWidget::viewClicked()
     m_userWidget->hide();
     m_bottomWidget->hide();
     m_examineGroupAnimation->start();
+    emit goExamine();
 }
 
 void MainTopWidget::setNums(int num)

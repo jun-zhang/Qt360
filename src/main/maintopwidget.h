@@ -32,6 +32,8 @@ signals:
     void showMenu();
     void showMin();
     void closeWidget();
+    void goExamine();
+    void goMain();
 protected:
     void paintEvent(QPaintEvent *);
     void resizeEvent(QResizeEvent *);

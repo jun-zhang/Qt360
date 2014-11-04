@@ -95,6 +95,16 @@
         <file alias="security_safe_press">default_theme/360Protect/Image/security_safe_press.png</file>
         <file alias="def_head">safeid_new_theme/image/def_head.png</file>
         <file alias="head_bkg">safeid_new_theme/image/head_bkg.png</file>
+        <file alias="clean">default_theme/MainFrame/Image/clean.png</file>
+        <file alias="safe_check">default_theme/MainFrame/Image/safe_check.png</file>
+        <file alias="youhua">default_theme/MainFrame/Image/youhua.png</file>
+        <file alias="routerdefender">ProtectArea_theme/Image/routerdefender.png</file>
+        <file alias="360JiShi">advtools/360JiShi_10_32.png</file>
+        <file alias="360SoftManger">advtools/AdvanceTools_360SoftManger_10_32.png</file>
+        <file alias="360MobileMgr">advtools/AdvanceTools_360MobileMgr_10_32.png</file>
+        <file alias="NetSpeed">advtools/AdvanceTools_NetSpeed_10_32.png</file>
+        <file alias="all_tool_bk">default_theme/AdvTool/Images/all_tool_bk.png</file>
+        <file alias="advtool_more">default_theme/MainFrame/Image/advtool_more.png</file>
     </qresource>
     <qresource prefix="/numbers/main">
         <file alias="0">default_theme/font/tijian_score/0.png</file>
