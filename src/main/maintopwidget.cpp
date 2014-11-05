@@ -25,7 +25,7 @@ void MainTopWidget::initAnimations()
 {
     m_toOrange = new QPropertyAnimation(this, "color");
     m_toOrange->setDuration(5000);
-    m_toOrange->setStartValue(QColor(Qt::green));
+    m_toOrange->setStartValue(QColor("#2abf1d"));
     m_toOrange->setEndValue(QColor("#FFA500"));
 
     m_toYellow = new QPropertyAnimation(this, "color");
@@ -69,7 +69,7 @@ void MainTopWidget::initAnimations()
 
 void MainTopWidget::initData()
 {
-    m_backgroundColor = QColor(Qt::green);
+    m_backgroundColor = QColor("#2abf1d");
     m_opacity = 1.0;
 
     m_wenliPix = QPixmap(":/main/wenli");
@@ -265,8 +265,8 @@ void MainTopWidget::paintEvent(QPaintEvent *)
         painter.setBrush(m_backgroundColor);
         painter.drawRect(rect());
         painter.setOpacity(m_opacity);
-        painter.drawPixmap(rect(), m_guangYPix);
+        painter.drawPixmap(rect(), m_guangYPix, rect());
         painter.setOpacity(1.0);
-        painter.drawPixmap(rect(), m_wenliPix);
+        painter.drawPixmap(rect(), m_wenliPix, rect());
     }
 }

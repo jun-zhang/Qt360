@@ -12,3 +12,7 @@ QLabel#bottomlabel{
     color:white;
     font-size: 15px;
 }
+
+WenliWidget{
+    qproperty-backPix: "default"
+}

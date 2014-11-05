@@ -39,7 +39,8 @@ SOURCES += main.cpp\
     src/main/bottom/mainbottomfirstwidget.cpp \
     src/main/bottom/mainexaminewidget.cpp \
     src/main/mainwindow.cpp \
-    src/main/common/shadowwidget.cpp
+    src/main/common/shadowwidget.cpp \
+    src/commom/wenliwidget.cpp
 
 HEADERS  += \
     src/mainwidget.h \
@@ -71,7 +72,8 @@ HEADERS  += \
     src/main/bottom/mainbottomfirstwidget.h \
     src/main/bottom/mainexaminewidget.h \
     src/main/mainwindow.h \
-    src/main/common/shadowwidget.h
+    src/main/common/shadowwidget.h \
+    src/commom/wenliwidget.h
 
 RESOURCES += \
     resource/360.qrc
