@@ -4,25 +4,23 @@
 #include <QWidget>
 #include <QPixmap>
 #include "../commom/basestylewidget.h"
+
+#define MAIN_TOP_WIDTH      900
+#define MAIN_TOP_HEIGHT     440
+
 class QPropertyAnimation;
 class QStackedWidget;
 class QParallelAnimationGroup;
 class UserWidget;
 class TopBottomWidget;
 class MainScoreWidget;
+class WenliWidget;
 
 class MainTopWidget : public BaseStyleWidget
 {
     Q_OBJECT
-    Q_PROPERTY(QColor color READ color WRITE setColor)
 public:
     explicit MainTopWidget(QWidget *parent = 0);
-    void setSkinType(int type);
-    void setColor(const QColor &color);
-    const QColor &color()
-    {
-        return m_backgroundColor;
-    }
 
 public slots:
     void setNums(int num);
@@ -35,7 +33,6 @@ signals:
     void goExamine();
     void goMain();
 protected:
-    void paintEvent(QPaintEvent *);
     void resizeEvent(QResizeEvent *);
 private slots:
     void examineClicked();
@@ -45,19 +42,10 @@ private slots:
 private:
     void initUI();
     void initTopTitleWidget();
-    void initData();
     void initConnect();
     void initAnimations();
     void updateSizeAndPos();
 private:
-    int m_type;
-    int m_num;
-    qreal m_opacity;
-    QPixmap m_guangYPix;
-    QPixmap m_wenliPix;
-    QColor m_backgroundColor;
-    QPropertyAnimation *m_toOrange;
-    QPropertyAnimation *m_toYellow;
     QWidget *m_titleWidget;
     QStackedWidget *m_titleStacked;
     UserWidget *m_userWidget;
@@ -65,6 +53,7 @@ private:
     TopBottomWidget *m_bottomWidget;
     QParallelAnimationGroup *m_examineGroupAnimation;
     QParallelAnimationGroup *m_returnGroupAnimation;
+    WenliWidget *m_backgroundWidget;
 };
 
 #endif // MAINTOPWIDGET_H
