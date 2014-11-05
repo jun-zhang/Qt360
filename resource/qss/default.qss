@@ -14,5 +14,37 @@ QLabel#bottomlabel{
 }
 
 WenliWidget{
-    qproperty-backPix: "default"
+    qproperty-backPix: "default";
+}
+
+ScanButtonWidget#quickButton{
+    qproperty-normalPix: ":/safe/scan_button_quick";
+    qproperty-animPix: ":/safe/scan_button_quick_hover";
+    qproperty-text: "快速扫描";
+}
+
+ScanButtonWidget#fullButton{
+    qproperty-animPix: ":/safe/scan_button_full_hover";
+    qproperty-normalPix: ":/safe/scan_button_full";
+    qproperty-text: "全盘扫描";
+}
+
+ScanButtonWidget#customButton{
+    qproperty-animPix: ":/safe/scan_button_custom_hover";
+    qproperty-normalPix: ":/safe/scan_button_custom";
+    qproperty-text: "自定义扫描";
+}
+
+StaticTextButton#fixButton{
+    qproperty-buttonPix: ":/safe/system_fix";
+    qproperty-text: "常规修复";
+}
+
+StaticTextButton#patchButton{
+    qproperty-buttonPix: ":/safe/system_patch";
+    qproperty-text: "漏洞修复";
+}
+
+QLabel#scanButtonText{
+    font-size: 15px;
 }

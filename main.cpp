@@ -16,10 +16,10 @@ int main(int argc, char *argv[])
     qApp->setStyleSheet(qss.readAll());
     qss.close();
 
-//    MainWidget w;
-//    w.show();
-    MainWindow *w = new MainWindow;
-    w->show();
+    MainWidget w;
+    w.show();
+//    MainWindow *w = new MainWindow;
+//    w->show();
 
     return a.exec();
 }

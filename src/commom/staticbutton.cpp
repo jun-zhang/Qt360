@@ -39,12 +39,16 @@ void StaticButton::setOneButtonInfo(const QString &icon, int num)
 {
     m_num = num;
     QPixmap pixmap(icon);
+    if(m_pixList.size() != 0)
+    {
+        m_pixList.clear();
+    }
     for(int i=0; i != m_num; i++)
     {
         m_pixList.append(pixmap.copy(i*(pixmap.width()/m_num), 0, pixmap.width()/m_num, pixmap.height()));
     }
     m_currentPix = m_pixList.at(0);
-    this->setFixedSize(m_currentPix.size());
+    this->setFixedSize(m_pixList.at(0).size());
 }
 
 void StaticButton::setDivisionButtonInfo(const QString &icon, int num)

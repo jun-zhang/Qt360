@@ -20,7 +20,7 @@ DynamicButton::DynamicButton(QWidget *parent) :
 void DynamicButton::setFirstAnim(const QString &icon, int count)
 {
     QPixmap pix(icon);
-    m_firstdyWidget->setInfo(count, pix, 80);
+    m_firstdyWidget->setInfo(pix, count, 80);
     m_firstdyWidget->setGeometry((this->width()-m_firstdyWidget->width())/2, (this->height()-70)/2 - 1,\
                             m_firstdyWidget->width(), m_firstdyWidget->height());
     connect(m_firstdyWidget, SIGNAL(animFinished()), this, SLOT(firstAnimFinished()));
@@ -29,7 +29,7 @@ void DynamicButton::setFirstAnim(const QString &icon, int count)
 void DynamicButton::setNormalAnimInfo(const QString &icon, int count)
 {
     QPixmap pix(icon);
-    m_dyWidget->setInfo(count, pix, 50);
+    m_dyWidget->setInfo(pix, count, 50);
     m_dyWidget->setGeometry((this->width()-m_dyWidget->width())/2, (this->height()-m_dyWidget->height())/2,\
                             m_dyWidget->width(), m_dyWidget->height());
 
@@ -48,7 +48,7 @@ void DynamicButton::setNormalIconsInfo(const QString &normalIcon, const QString 
 void DynamicButton::setNoSelectedAnimInfo(const QString &icon, int count)
 {
     QPixmap pix(icon);
-    m_noSelectdDyWidget->setInfo(count, pix, 50);
+    m_noSelectdDyWidget->setInfo(pix, count, 50);
     m_noSelectdDyWidget->setGeometry((this->width()-m_noSelectdDyWidget->width())/2, (this->height()-m_noSelectdDyWidget->height())/2,\
                             m_noSelectdDyWidget->width(), m_noSelectdDyWidget->height());
 }

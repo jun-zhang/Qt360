@@ -2,6 +2,7 @@
 #include "mainbottomwidget.h"
 #include "maintopwidget.h"
 #include <QApplication>
+#include <QFile>
 
 MainWindow::MainWindow(QWidget *parent) :
     ShadowWidget(parent)
@@ -24,7 +25,7 @@ void MainWindow::initConnect()
     connect(m_topWidget, SIGNAL(goMain()), m_bottomWidget, SLOT(goMain()));
     connect(m_topWidget, SIGNAL(showMin()), this, SLOT(showMinimized()));
     connect(m_topWidget, SIGNAL(closeWidget()), this, SLOT(closeWidget()));
-
+    connect(m_topWidget, SIGNAL(showSkin()), this, SLOT(showSkin()));
 }
 
 void MainWindow::playVideo()
@@ -39,7 +40,11 @@ void MainWindow::showMenu()
 
 void MainWindow::showSkin()
 {
-
+    QFile qss(":/qss/skin");
+    qss.open(QFile::ReadOnly);
+    qApp->setStyleSheet(qss.readAll());
+    qss.close();
+    update();
 }
 
 void MainWindow::closeWidget()

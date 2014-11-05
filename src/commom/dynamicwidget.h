@@ -9,7 +9,7 @@ class DynamicWidget : public QWidget
     Q_OBJECT
 public:
     explicit DynamicWidget(QWidget *parent = 0);
-    void setInfo(int count, const QPixmap &pix, int milliseconds = 100);
+    void setInfo(const QPixmap &pix, int count = 8, int milliseconds = 100);
     void startClockwise();
     void startCounterclockwise();
     void stopAnim();

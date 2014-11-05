@@ -12,6 +12,9 @@ public:
     explicit SafeButtonWidget(QWidget *parent = 0);
     void setIconsInfo(const QString &animIcons, int animNum,\
                       const QString &normalIcons,int normalNum = 4);
+    void setAnimInfo(const QString &animIcons, int animNum = 8);
+    void setNormalInfo(const QString &normalIcons,int normalNum = 4);
+
 signals:
     void buttonClicked();
 protected:

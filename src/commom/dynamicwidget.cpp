@@ -7,21 +7,23 @@ DynamicWidget::DynamicWidget(QWidget *parent) :
     m_currentIndex = 0;
 }
 
-void DynamicWidget::setInfo(int count, const QPixmap &pix, int milliseconds)
+void DynamicWidget::setInfo(const QPixmap &pix, int count, int milliseconds)
 {
     m_currentIndex = 0;
     m_count = count;
-    m_clockTimer = new QTimer(this);
-    m_clockTimer->setInterval(milliseconds);
-    connect(m_clockTimer, SIGNAL(timeout()), this, SLOT(updateClockwise()));
-
-    m_counterclockTimer = new QTimer(this);
-    m_counterclockTimer->setInterval(milliseconds);
-    connect(m_counterclockTimer, SIGNAL(timeout()), this, SLOT(updateCounterclockwise()));
 
     if(m_pixList.count() != 0)
     {
         m_pixList.clear();
+    }else
+    {
+        m_clockTimer = new QTimer(this);
+        m_clockTimer->setInterval(milliseconds);
+        connect(m_clockTimer, SIGNAL(timeout()), this, SLOT(updateClockwise()));
+
+        m_counterclockTimer = new QTimer(this);
+        m_counterclockTimer->setInterval(milliseconds);
+        connect(m_counterclockTimer, SIGNAL(timeout()), this, SLOT(updateCounterclockwise()));
     }
 
     for(int i=0; i != count; i++)

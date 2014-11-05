@@ -40,7 +40,13 @@ SOURCES += main.cpp\
     src/main/bottom/mainexaminewidget.cpp \
     src/main/mainwindow.cpp \
     src/main/common/shadowwidget.cpp \
-    src/commom/wenliwidget.cpp
+    src/commom/wenliwidget.cpp \
+    src/safe/safewidget.cpp \
+    src/safe/common/scanbuttonwidget.cpp \
+    src/commom/statictextbutton.cpp \
+    src/safe/common/safescanbottom.cpp \
+    src/safe/safetopwidget.cpp \
+    src/safe/safebottomwidget.cpp
 
 HEADERS  += \
     src/mainwidget.h \
@@ -73,7 +79,13 @@ HEADERS  += \
     src/main/bottom/mainexaminewidget.h \
     src/main/mainwindow.h \
     src/main/common/shadowwidget.h \
-    src/commom/wenliwidget.h
+    src/commom/wenliwidget.h \
+    src/safe/safewidget.h \
+    src/safe/common/scanbuttonwidget.h \
+    src/commom/statictextbutton.h \
+    src/safe/common/safescanbottom.h \
+    src/safe/safetopwidget.h \
+    src/safe/safebottomwidget.h
 
 RESOURCES += \
     resource/360.qrc

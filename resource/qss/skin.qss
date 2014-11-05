@@ -1,0 +1,18 @@
+QLabel#buttonLabel{
+    color:white;
+}
+
+QLabel#toplabel{
+    color:white;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+QLabel#bottomlabel{
+    color:white;
+    font-size: 15px;
+}
+
+WenliWidget{
+    qproperty-backPix: ":/main/background"
+}

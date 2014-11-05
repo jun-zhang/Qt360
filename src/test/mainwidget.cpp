@@ -5,6 +5,7 @@
 #include "../commom/speedoutbutton.h"
 #include "../commom/toptabwidget.h"
 #include "../commom/numbersanimwidget.h"
+#include "../safe/common/safescanbottom.h"
 #include <QHBoxLayout>
 #include <QVBoxLayout>
 MainWidget::MainWidget(QWidget *parent)
@@ -47,9 +48,12 @@ MainWidget::MainWidget(QWidget *parent)
 
     QTimer::singleShot(2000, this, SLOT(updateNum()));
     QVBoxLayout *vLayout = new QVBoxLayout;
+
+    SafeScanBottom *scanButton = new SafeScanBottom;
     vLayout->addLayout(hLayout);
     vLayout->addWidget(topWidget);
     vLayout->addLayout(numLayout);
+    vLayout->addWidget(scanButton);
 
     this->setLayout(vLayout);
 }
