@@ -2,6 +2,9 @@
 #define SAFEWIDGET_H
 
 #include <QWidget>
+class SafeScanBottom;
+class WenliBackWidget;
+class StackStatusWidget;
 
 class SafeWidget : public QWidget
 {
@@ -10,9 +13,13 @@ public:
     explicit SafeWidget(QWidget *parent = 0);
 
 signals:
-
-public slots:
-
+    void goToMain();
+private:
+    void initUI();
+private:
+    WenliBackWidget *m_topBackWidget;
+    StackStatusWidget   *m_stackStatusWidget;
+    SafeScanBottom  *m_scanBottomWidget;
 };
 
 #endif // SAFEWIDGET_H

@@ -9,6 +9,7 @@ SafeScanBottom::SafeScanBottom(QWidget *parent) :
 {
     this->initUI();
     this->initConnect();
+    this->setStyleSheet("QWidget{background:white;}");
 }
 
 void SafeScanBottom::initUI()
@@ -40,8 +41,10 @@ void SafeScanBottom::initUI()
     staticLayout->addWidget(m_patch);
 
     QVBoxLayout *mainLayout = new QVBoxLayout;
+    mainLayout->addStretch();
     mainLayout->addLayout(scanLayout);
     mainLayout->addLayout(staticLayout);
+    mainLayout->addSpacing(20);
 
     this->setLayout(mainLayout);
 

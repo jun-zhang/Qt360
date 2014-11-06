@@ -46,7 +46,9 @@ SOURCES += main.cpp\
     src/commom/statictextbutton.cpp \
     src/safe/common/safescanbottom.cpp \
     src/safe/safetopwidget.cpp \
-    src/safe/safebottomwidget.cpp
+    src/safe/safebottomwidget.cpp \
+    src/commom/wenlibackwidget.cpp \
+    src/commom/stackstatuswidget.cpp
 
 HEADERS  += \
     src/mainwidget.h \
@@ -85,7 +87,10 @@ HEADERS  += \
     src/commom/statictextbutton.h \
     src/safe/common/safescanbottom.h \
     src/safe/safetopwidget.h \
-    src/safe/safebottomwidget.h
+    src/safe/safebottomwidget.h \
+    src/commom/myhelper.h \
+    src/commom/wenlibackwidget.h \
+    src/commom/stackstatuswidget.h
 
 RESOURCES += \
     resource/360.qrc

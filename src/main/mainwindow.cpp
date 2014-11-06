@@ -1,14 +1,19 @@
 #include "mainwindow.h"
 #include "mainbottomwidget.h"
 #include "maintopwidget.h"
+#include "../safe/safewidget.h"
 #include <QApplication>
 #include <QFile>
+#include <QStackedWidget>
+#include <QPropertyAnimation>
+#include <QParallelAnimationGroup>
 
 MainWindow::MainWindow(QWidget *parent) :
     ShadowWidget(parent)
 {
     this->initUI();
     this->initConnect();
+    this->initAnim();
 }
 
 void MainWindow::initUI()
@@ -16,7 +21,12 @@ void MainWindow::initUI()
     this->setFixedSize(900, 600);
     m_topWidget = new MainTopWidget(this);
     m_bottomWidget = new MainBottomWidget(this);
+    m_stackWidget = new QStackedWidget(this);
+    m_stackWidget->setGeometry(rect());
+    m_stackWidget->lower();
 
+    m_safeWidget = new SafeWidget;
+    m_stackWidget->addWidget(m_safeWidget);
 }
 
 void MainWindow::initConnect()
@@ -26,6 +36,39 @@ void MainWindow::initConnect()
     connect(m_topWidget, SIGNAL(showMin()), this, SLOT(showMinimized()));
     connect(m_topWidget, SIGNAL(closeWidget()), this, SLOT(closeWidget()));
     connect(m_topWidget, SIGNAL(showSkin()), this, SLOT(showSkin()));
+    connect(m_safeWidget, SIGNAL(goToMain()), this, SLOT(goToMain()));
+    connect(m_bottomWidget, SIGNAL(safeClicked()), this, SLOT(goToSafe()));
+}
+
+void MainWindow::initAnim()
+{
+    QPropertyAnimation *m_upMainAnimation = new QPropertyAnimation(m_topWidget, "pos");
+    m_upMainAnimation->setDuration(200);
+    m_upMainAnimation->setStartValue(QPoint(0, 0));
+    m_upMainAnimation->setEndValue(QPoint(0, -440));
+
+    QPropertyAnimation *m_downMainAnimation = new QPropertyAnimation(m_bottomWidget, "pos");
+    m_downMainAnimation->setDuration(200);
+    m_downMainAnimation->setStartValue(QPoint(0, 440));
+    m_downMainAnimation->setEndValue(QPoint(0, 600));
+
+    m_upGroup = new QParallelAnimationGroup;
+    m_upGroup->addAnimation(m_upMainAnimation);
+    m_upGroup->addAnimation(m_downMainAnimation);
+
+    QPropertyAnimation *m_upGarAnimation = new QPropertyAnimation(m_topWidget, "pos");
+    m_upGarAnimation->setDuration(200);
+    m_upGarAnimation->setStartValue(QPoint(0, -440));
+    m_upGarAnimation->setEndValue(QPoint(0, 0));
+
+    QPropertyAnimation *m_downGarAnimation = new QPropertyAnimation(m_bottomWidget, "pos");
+    m_downGarAnimation->setDuration(200);
+    m_downGarAnimation->setStartValue(QPoint(0, 600));
+    m_downGarAnimation->setEndValue(QPoint(0, 440));
+
+    m_downGroup = new QParallelAnimationGroup;
+    m_downGroup->addAnimation(m_upGarAnimation);
+    m_downGroup->addAnimation(m_downGarAnimation);
 }
 
 void MainWindow::playVideo()
@@ -34,6 +77,27 @@ void MainWindow::playVideo()
 }
 
 void MainWindow::showMenu()
+{
+
+}
+
+void MainWindow::goToMain()
+{
+    m_downGroup->start();
+}
+
+void MainWindow::goToSafe()
+{
+    m_stackWidget->setCurrentIndex(0);
+    m_upGroup->start();
+}
+
+void MainWindow::goToClean()
+{
+
+}
+
+void MainWindow::goToYouhua()
 {
 
 }

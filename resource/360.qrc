@@ -131,13 +131,14 @@
         <file alias="scan_button_quick_hover">SafeCheck_theme/Images/scan_button_quick_hover.png</file>
         <file alias="system_fix">SafeCheck_theme/Images/system_fix.png</file>
         <file alias="system_patch">SafeCheck_theme/Images/system_patch.png</file>
-        <file>SafeCheck_theme/Images/start_btn.png</file>
+        <file alias="start">SafeCheck_theme/Images/start_btn.png</file>
         <file>SafeCheck_theme/Images/stop_scan.png</file>
         <file>SafeCheck_theme/Images/logo_danger.png</file>
-        <file>SafeCheck_theme/Images/logo_normal.png</file>
+        <file alias="logo_normal">SafeCheck_theme/Images/logo_normal.png</file>
         <file>SafeCheck_theme/Images/logo_safe.png</file>
         <file>SafeCheck_theme/Images/logo_warning.png</file>
         <file>SafeCheck_theme/Images/btn_black.png</file>
+        <file alias="return">default_theme/return.png</file>
     </qresource>
     <qresource prefix="/clean"/>
     <qresource prefix="/youhua"/>
