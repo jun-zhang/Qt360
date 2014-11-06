@@ -48,7 +48,10 @@ SOURCES += main.cpp\
     src/safe/safetopwidget.cpp \
     src/safe/safebottomwidget.cpp \
     src/commom/wenlibackwidget.cpp \
-    src/commom/stackstatuswidget.cpp
+    src/commom/stackstatuswidget.cpp \
+    src/clean/cleanwidget.cpp \
+    src/youhua/youhuawidget.cpp \
+    src/clean/common/cleanscanbottom.cpp
 
 HEADERS  += \
     src/mainwidget.h \
@@ -90,7 +93,10 @@ HEADERS  += \
     src/safe/safebottomwidget.h \
     src/commom/myhelper.h \
     src/commom/wenlibackwidget.h \
-    src/commom/stackstatuswidget.h
+    src/commom/stackstatuswidget.h \
+    src/clean/cleanwidget.h \
+    src/youhua/youhuawidget.h \
+    src/clean/common/cleanscanbottom.h
 
 RESOURCES += \
     resource/360.qrc
