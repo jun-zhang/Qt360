@@ -21,7 +21,7 @@ void WenliBackWidget::initUI()
     hLayout->addWidget(m_button, 0, Qt::AlignLeft | Qt::AlignTop);
     hLayout->addStretch();
     hLayout->addWidget(m_groupButton, 0, Qt::AlignRight | Qt::AlignTop);
-    hLayout->setContentsMargins(0, 0, 2, 5);
+    hLayout->setContentsMargins(0, 0, 2, 0);
 
     m_vLayout = new QVBoxLayout;
     m_vLayout->addLayout(hLayout);

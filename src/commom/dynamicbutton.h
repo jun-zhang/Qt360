@@ -25,6 +25,7 @@ public:
     void setButtonStatus(BUTTONSTATUS status);
 signals:
     void buttonClicked();
+    void firstFinished();
 protected:
     void paintEvent(QPaintEvent *);
     void enterEvent(QEvent *);

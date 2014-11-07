@@ -94,6 +94,7 @@ void DynamicButton::firstAnimFinished()
     m_firstdyWidget->hide();
     disconnect(m_firstdyWidget, SIGNAL(animFinished()), this, SLOT(firstAnimFinished()));
     delete m_firstdyWidget;
+    emit firstFinished();
     m_firstdyWidget = NULL;
     m_status = BUTTON_SCALED;
     m_isFirsted = true;
@@ -101,6 +102,7 @@ void DynamicButton::firstAnimFinished()
     m_dyScaledWidget->show();
     m_dyScaledWidget->raise();
     m_dyScaledWidget->startAnim();
+
 }
 
 void DynamicButton::setCheckedState(bool state)
@@ -209,7 +211,7 @@ void DynamicButton::mousePressEvent(QMouseEvent *e)
         e->ignore();
         return;
     }
-    setButtonStatus(BUTTON_PRESSED);
+    //setButtonStatus(BUTTON_PRESSED);
 }
 
 void DynamicButton::mouseReleaseEvent(QMouseEvent *e)
@@ -222,7 +224,7 @@ void DynamicButton::mouseReleaseEvent(QMouseEvent *e)
     if(rect().contains(e->pos()))
     {
         emit buttonClicked();
-        setButtonStatus(BUTTON_ENTER);
+        setButtonStatus(BUTTON_PRESSED);
         e->accept();
     }else{
         setButtonStatus(BUTTON_LEAVE);

@@ -15,7 +15,9 @@ void StackStatusWidget::initUI()
     this->setAttribute(Qt::WA_TranslucentBackground);
     m_logo = new QLabel;
     m_topText = new QLabel;
+    m_topText->setObjectName("stacktopLabel");
     m_bottomText = new QLabel;
+    m_bottomText->setObjectName("stackbottomLabel");
     m_normalButton = new StaticButton;
     connect(m_normalButton, SIGNAL(buttonClicked()), this, SIGNAL(normalClicked()));
 
@@ -30,7 +32,7 @@ void StackStatusWidget::initUI()
     mainLayout->addLayout(textLayout);
     mainLayout->addStretch();
     mainLayout->addWidget(m_normalButton, 0, Qt::AlignCenter);
-    mainLayout->setContentsMargins(20, 0, 20, 0);
+    mainLayout->setContentsMargins(20, 0, 20, 20);
 
     this->setLayout(mainLayout);
 

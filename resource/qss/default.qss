@@ -17,6 +17,16 @@ WenliWidget{
     qproperty-backPix: "default";
 }
 
+QLabel#stacktopLabel{
+    color: white;
+    font-size: 30px;
+}
+
+QLabel#stackbottomLabel{
+    color: white;
+    font-size: 15px;
+}
+
 ScanButtonWidget#quickButton{
     qproperty-normalPix: ":/safe/scan_button_quick";
     qproperty-animPix: ":/safe/scan_button_quick_hover";
@@ -47,4 +57,56 @@ StaticTextButton#patchButton{
 
 QLabel#scanButtonText{
     font-size: 15px;
+}
+
+QLabel#cleanTitleLabel{
+    color:  black;
+    font-size: 20px;
+}
+
+QLabel#cleanDescLabel{
+    color:  gray;
+    font-size: 15px;
+}
+
+QWidget#bottomWidget{
+    background: white;
+}
+
+CleanDynamicButtonWidget#trashButton{
+    qproperty-normalNum: 13;
+    qproperty-normalAnimInfo: ":/clean/trash_anim";
+    qproperty-title: "清理垃圾";
+    qproperty-description: "清理电脑中的垃圾";
+}
+
+CleanDynamicButtonWidget#traceButton{
+    qproperty-normalAnimInfo: ":/clean/trace_anim";
+    qproperty-title: "清理痕迹";
+    qproperty-description: "清理浏览器使用痕迹";
+}
+
+CleanDynamicButtonWidget#regButton{
+    qproperty-normalAnimInfo: ":/clean/registry_anim";
+    qproperty-title: "清理注册表";
+    qproperty-description: "清理无效的注册表项目";
+}
+
+CleanDynamicButtonWidget#pluginButton{
+    qproperty-normalAnimInfo: ":/clean/plugin_anim";
+    qproperty-title: "清理插件";
+    qproperty-description: "清理无用的插件，降低打扰";
+}
+
+CleanDynamicButtonWidget#softButton{
+    qproperty-normalAnimInfo: ":/clean/soft_anim";
+    qproperty-title: "清理软件";
+    qproperty-description: "清理推广、弹窗不常用软件";
+}
+
+CleanDynamicButtonWidget#cookiesButton{
+    qproperty-normalNum: 20;
+    qproperty-normalAnimInfo: ":/clean/cookies_anim";
+    qproperty-title: "清理Cookies";
+    qproperty-description: "清理上网、游戏、购物等记录";
 }

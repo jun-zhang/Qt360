@@ -18,9 +18,17 @@ void DynamicScaledWidget::setAnimInfo(const QPixmap &pix, int milliseconds, int 
     m_originHeight = pix.height();
     this->setFixedSize(pix.size());
 
-    m_timer = new QTimer(this);
-    m_timer->setInterval(milliseconds);
-    connect(m_timer, SIGNAL(timeout()), this, SLOT(updateAnim()));
+
+
+    if(m_rateList.size() > 0)
+    {
+        m_rateList.clear();
+    }else
+    {
+        m_timer = new QTimer(this);
+        m_timer->setInterval(milliseconds);
+        connect(m_timer, SIGNAL(timeout()), this, SLOT(updateAnim()));
+    }
 
     for(int i=0; i < number; i++)
     {

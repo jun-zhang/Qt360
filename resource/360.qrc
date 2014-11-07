@@ -140,6 +140,28 @@
         <file>SafeCheck_theme/Images/btn_black.png</file>
         <file alias="return">default_theme/return.png</file>
     </qresource>
-    <qresource prefix="/clean"/>
+    <qresource prefix="/clean">
+        <file alias="group_check">OKClean_theme/Image/group_check.png</file>
+        <file alias="group_uncheck">OKClean_theme/Image/group_uncheck.png</file>
+        <file alias="cookies_anim">OKClean_theme/Image/cookies_anim.png</file>
+        <file alias="cookies_anim_gray">OKClean_theme/Image/cookies_anim_gray.png</file>
+        <file alias="enter_anim">OKClean_theme/Image/enter_anim.png</file>
+        <file alias="notselect_hover">OKClean_theme/Image/notselect_hover.png</file>
+        <file alias="notselect_normal">OKClean_theme/Image/notselect_normal.png</file>
+        <file alias="plugin_anim">OKClean_theme/Image/plugin_anim.png</file>
+        <file alias="plugin_anim_gray">OKClean_theme/Image/plugin_anim_gray.png</file>
+        <file alias="registry_anim">OKClean_theme/Image/registry_anim.png</file>
+        <file alias="registry_anim_gray">OKClean_theme/Image/registry_anim_gray.png</file>
+        <file alias="select_hover">OKClean_theme/Image/select_hover.png</file>
+        <file alias="select_normal">OKClean_theme/Image/select_normal.png</file>
+        <file alias="soft_anim">OKClean_theme/Image/soft_anim.png</file>
+        <file alias="soft_anim_gray">OKClean_theme/Image/soft_anim_gray.png</file>
+        <file alias="trace_anim">OKClean_theme/Image/trace_anim.png</file>
+        <file alias="trace_anim_gray">OKClean_theme/Image/trace_anim_gray.png</file>
+        <file alias="trash_anim">OKClean_theme/Image/trash_anim.png</file>
+        <file alias="trash_anim_gray">OKClean_theme/Image/trash_anim_gray.png</file>
+        <file alias="top_scan">OKClean_theme/Image/top_scan.png</file>
+        <file alias="btn_top_scan">OKClean_theme/Image/btn_top_scan.png</file>
+    </qresource>
     <qresource prefix="/youhua"/>
 </RCC>

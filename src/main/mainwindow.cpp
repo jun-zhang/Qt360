@@ -2,6 +2,7 @@
 #include "mainbottomwidget.h"
 #include "maintopwidget.h"
 #include "../safe/safewidget.h"
+#include "../clean/cleanwidget.h"
 #include <QApplication>
 #include <QFile>
 #include <QStackedWidget>
@@ -27,6 +28,8 @@ void MainWindow::initUI()
 
     m_safeWidget = new SafeWidget;
     m_stackWidget->addWidget(m_safeWidget);
+    m_cleanWidget = new CleanWidget;
+    m_stackWidget->addWidget(m_cleanWidget);
 }
 
 void MainWindow::initConnect()
@@ -37,7 +40,9 @@ void MainWindow::initConnect()
     connect(m_topWidget, SIGNAL(closeWidget()), this, SLOT(closeWidget()));
     connect(m_topWidget, SIGNAL(showSkin()), this, SLOT(showSkin()));
     connect(m_safeWidget, SIGNAL(goToMain()), this, SLOT(goToMain()));
+    connect(m_cleanWidget, SIGNAL(goToMain()), this, SLOT(goToMain()));
     connect(m_bottomWidget, SIGNAL(safeClicked()), this, SLOT(goToSafe()));
+    connect(m_bottomWidget, SIGNAL(cleanClicked()), this, SLOT(goToClean()));
 }
 
 void MainWindow::initAnim()
@@ -94,7 +99,9 @@ void MainWindow::goToSafe()
 
 void MainWindow::goToClean()
 {
-
+    m_stackWidget->setCurrentIndex(1);
+    m_upGroup->start();
+    m_cleanWidget->startFirst();
 }
 
 void MainWindow::goToYouhua()

@@ -8,6 +8,8 @@ class QStackedWidget;
 class MainTopWidget;
 class MainBottomWidget;
 class SafeWidget;
+class CleanWidget;
+
 class MainWindow : public ShadowWidget
 {
     Q_OBJECT
@@ -34,6 +36,7 @@ private:
     QParallelAnimationGroup *m_downGroup;
     QStackedWidget  *m_stackWidget;
     SafeWidget  *m_safeWidget;
+    CleanWidget *m_cleanWidget;
 };
 
 #endif // MAINWINDOW_H

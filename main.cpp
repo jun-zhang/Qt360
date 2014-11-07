@@ -3,7 +3,7 @@
 #include <QApplication>
 #include <QTextCodec>
 #include <QFile>
-
+//#define MAIN_TEST
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
@@ -17,11 +17,13 @@ int main(int argc, char *argv[])
     qss.open(QFile::ReadOnly);
     qApp->setStyleSheet(qss.readAll());
     qss.close();
-
-//    MainWidget w;
-//    w.show();
+#ifdef MAIN_TEST
+    MainWidget w;
+    w.show();
+#else
     MainWindow *w = new MainWindow;
     w->show();
+#endif
 
     return a.exec();
 }
