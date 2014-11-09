@@ -17,7 +17,7 @@ protected:
     void paintEvent(QPaintEvent *);
     void enterEvent(QEvent *);
     void leaveEvent(QEvent *);
-    void mousePressEvent(QMouseEvent *);
+    void mousePressEvent(QMouseEvent *e);
     void mouseReleaseEvent(QMouseEvent *e);
 private:
     QPixmap m_normalHover;

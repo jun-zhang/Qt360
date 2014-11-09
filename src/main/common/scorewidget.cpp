@@ -13,7 +13,7 @@ ScoreWidget::ScoreWidget(QWidget *parent) :
 
     m_numWidget = new NumbersAnimWidget(this);
     m_numWidget->setInitInfo(100, 3, ":/numbers/main/");
-    m_numWidget->move((width()-m_numWidget->width())/2 - 30, (height() - m_numWidget->height())/2);
+    m_numWidget->move((width()-m_numWidget->width())/2 - 30, (height() - m_numWidget->height())/2 + 5);
     m_numWidget->hide();
 }
 

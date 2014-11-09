@@ -2,6 +2,9 @@
 #define YOUHUAWIDGET_H
 
 #include <QWidget>
+class YouhuaScanBottom;
+class WenliBackWidget;
+class StackStatusWidget;
 
 class YouhuaWidget : public QWidget
 {
@@ -10,9 +13,13 @@ public:
     explicit YouhuaWidget(QWidget *parent = 0);
 
 signals:
-
-public slots:
-
+    void goToMain();
+private:
+    void initUI();
+private:
+    WenliBackWidget *m_topBackWidget;
+    StackStatusWidget   *m_stackStatusWidget;
+    YouhuaScanBottom  *m_scanBottomWidget;
 };
 
 #endif // YOUHUAWIDGET_H

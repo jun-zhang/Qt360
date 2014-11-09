@@ -52,7 +52,9 @@ SOURCES += main.cpp\
     src/clean/cleanwidget.cpp \
     src/youhua/youhuawidget.cpp \
     src/clean/common/cleanscanbottom.cpp \
-    src/clean/common/cleandynamicbuttonwidget.cpp
+    src/clean/common/cleandynamicbuttonwidget.cpp \
+    src/youhua/common/youhuabutton.cpp \
+    src/youhua/common/youhuascanbottom.cpp
 
 HEADERS  += \
     src/mainwidget.h \
@@ -98,7 +100,9 @@ HEADERS  += \
     src/clean/cleanwidget.h \
     src/youhua/youhuawidget.h \
     src/clean/common/cleanscanbottom.h \
-    src/clean/common/cleandynamicbuttonwidget.h
+    src/clean/common/cleandynamicbuttonwidget.h \
+    src/youhua/common/youhuabutton.h \
+    src/youhua/common/youhuascanbottom.h
 
 RESOURCES += \
     resource/360.qrc

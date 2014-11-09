@@ -110,3 +110,38 @@ CleanDynamicButtonWidget#cookiesButton{
     qproperty-title: "清理Cookies";
     qproperty-description: "清理上网、游戏、购物等记录";
 }
+
+QLabel#youhuaTitle{
+    color:  black;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+QLabel#youhuaDesc{
+    color:  gray;
+    font-size: 15px;
+}
+
+YouhuaButton#startButton{
+    qproperty-iconInfo: ":/youhua/start";
+    qproperty-title: "开机加速";
+    qproperty-description: "优化软件自启动状态";
+}
+
+YouhuaButton#sysButton{
+    qproperty-iconInfo: ":/youhua/sys";
+    qproperty-title: "系统加速";
+    qproperty-description: "优化系统与内存设置";
+}
+
+YouhuaButton#netButton{
+    qproperty-iconInfo: ":/youhua/net";
+    qproperty-title: "网络加速";
+    qproperty-description: "优化网络配置与性能";
+}
+
+YouhuaButton#diskButton{
+    qproperty-iconInfo: ":/youhua/disk";
+    qproperty-title: "硬盘加速";
+    qproperty-description: "优化硬盘传输效率";
+}

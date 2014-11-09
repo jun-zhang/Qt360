@@ -9,6 +9,7 @@ class MainTopWidget;
 class MainBottomWidget;
 class SafeWidget;
 class CleanWidget;
+class YouhuaWidget;
 
 class MainWindow : public ShadowWidget
 {
@@ -37,6 +38,7 @@ private:
     QStackedWidget  *m_stackWidget;
     SafeWidget  *m_safeWidget;
     CleanWidget *m_cleanWidget;
+    YouhuaWidget    *m_youhuaWidget;
 };
 
 #endif // MAINWINDOW_H

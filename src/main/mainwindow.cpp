@@ -3,6 +3,7 @@
 #include "maintopwidget.h"
 #include "../safe/safewidget.h"
 #include "../clean/cleanwidget.h"
+#include "../youhua/youhuawidget.h"
 #include <QApplication>
 #include <QFile>
 #include <QStackedWidget>
@@ -30,6 +31,8 @@ void MainWindow::initUI()
     m_stackWidget->addWidget(m_safeWidget);
     m_cleanWidget = new CleanWidget;
     m_stackWidget->addWidget(m_cleanWidget);
+    m_youhuaWidget = new YouhuaWidget;
+    m_stackWidget->addWidget(m_youhuaWidget);
 }
 
 void MainWindow::initConnect()
@@ -41,8 +44,10 @@ void MainWindow::initConnect()
     connect(m_topWidget, SIGNAL(showSkin()), this, SLOT(showSkin()));
     connect(m_safeWidget, SIGNAL(goToMain()), this, SLOT(goToMain()));
     connect(m_cleanWidget, SIGNAL(goToMain()), this, SLOT(goToMain()));
+    connect(m_youhuaWidget, SIGNAL(goToMain()), this, SLOT(goToMain()));
     connect(m_bottomWidget, SIGNAL(safeClicked()), this, SLOT(goToSafe()));
     connect(m_bottomWidget, SIGNAL(cleanClicked()), this, SLOT(goToClean()));
+    connect(m_bottomWidget, SIGNAL(youhuaClicked()), this, SLOT(goToYouhua()));
 }
 
 void MainWindow::initAnim()
@@ -106,7 +111,8 @@ void MainWindow::goToClean()
 
 void MainWindow::goToYouhua()
 {
-
+    m_stackWidget->setCurrentIndex(2);
+    m_upGroup->start();
 }
 
 void MainWindow::showSkin()

@@ -163,5 +163,18 @@
         <file alias="top_scan">OKClean_theme/Image/top_scan.png</file>
         <file alias="btn_top_scan">OKClean_theme/Image/btn_top_scan.png</file>
     </qresource>
-    <qresource prefix="/youhua"/>
+    <qresource prefix="/youhua">
+        <file alias="start">360SpeedupOpt_theme/image/btn_start_scan.png</file>
+        <file alias="disk_check">360SpeedupOpt_theme/image/disk_check.png</file>
+        <file alias="disk_uncheck">360SpeedupOpt_theme/image/disk_uncheck.png</file>
+        <file alias="logo">360SpeedupOpt_theme/image/logo.png</file>
+        <file alias="net_check">360SpeedupOpt_theme/image/net_check.png</file>
+        <file alias="net_uncheck">360SpeedupOpt_theme/image/net_uncheck.png</file>
+        <file alias="no_ignore">360SpeedupOpt_theme/image/no_ignore.png</file>
+        <file alias="shouqi">360SpeedupOpt_theme/image/shouqi.png</file>
+        <file alias="start_check">360SpeedupOpt_theme/image/start_check.png</file>
+        <file alias="start_uncheck">360SpeedupOpt_theme/image/start_uncheck.png</file>
+        <file alias="sys_check">360SpeedupOpt_theme/image/sys_check.png</file>
+        <file alias="sys_uncheck">360SpeedupOpt_theme/image/sys_uncheck.png</file>
+    </qresource>
 </RCC>

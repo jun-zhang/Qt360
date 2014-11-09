@@ -169,6 +169,7 @@ void MainTopWidget::examineClicked()
     m_bottomWidget->hide();
     m_scoreWidget->setButtonStatus(SCORE_FIX_BUTTON);
     m_scoreWidget->setNums(85);
+    this->setNums(85);
     m_examineGroupAnimation->start();
     emit goExamine();
 }

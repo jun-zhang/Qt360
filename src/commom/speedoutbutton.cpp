@@ -98,8 +98,12 @@ void SpeedOutButton::leaveEvent(QEvent *)
     setButtonStatus(BUTTON_LEAVE);
 }
 
-void SpeedOutButton::mousePressEvent(QMouseEvent *)
+void SpeedOutButton::mousePressEvent(QMouseEvent *e)
 {
+    if (e->button() != Qt::LeftButton) {
+        e->ignore();
+        return;
+    }
     setButtonStatus(BUTTON_PRESSED);
 }
 
