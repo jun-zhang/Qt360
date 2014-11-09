@@ -4,7 +4,7 @@
 #include <qmath.h>
 
 ShadowWidget::ShadowWidget(QWidget *parent) :
-    QWidget(parent), m_mousePress(false)
+    QDialog(parent), m_mousePress(false)
 {
     setWindowFlags(Qt::FramelessWindowHint | Qt::Dialog);
     this->setObjectName("basewidget");

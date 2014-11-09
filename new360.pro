@@ -7,7 +7,7 @@
 QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
-
+lessThan(QT_MAJOR_VERSION, 5): QT += phonon
 TARGET = new360
 TEMPLATE = app
 
@@ -55,10 +55,10 @@ SOURCES += main.cpp\
     src/clean/common/cleandynamicbuttonwidget.cpp \
     src/youhua/common/youhuabutton.cpp \
     src/youhua/common/youhuascanbottom.cpp \
-    src/main/common/opacitywidget.cpp
+    src/main/common/opacitywidget.cpp \
+    src/main/common/videowidget.cpp
 
 HEADERS  += \
-    src/mainwidget.h \
     src/commom/staticbutton.h \
     src/commom/dynamicbutton.h \
     src/commom/dynamicwidget.h \
@@ -104,8 +104,32 @@ HEADERS  += \
     src/clean/common/cleandynamicbuttonwidget.h \
     src/youhua/common/youhuabutton.h \
     src/youhua/common/youhuascanbottom.h \
-    src/main/common/opacitywidget.h
+    src/main/common/opacitywidget.h \
+    src/main/common/videowidget.h
 
 RESOURCES += \
     resource/360.qrc
 
+#复制视频文件
+win32{
+    COPY = copy /y
+    MKDIR = mkdir
+}else{
+    COPY = cp
+    MKDIR = mkdir -p
+}
+
+FILES_COPY_SRC = resource/video/360SafeVideo.wmv
+
+
+!equals(_PRO_FILE_PWD_, OUT_PWD) {
+    for(f, FILES_COPY_SRC){
+        orig_file = $$_PRO_FILE_PWD_/$$f
+        dist_file = $$OUT_PWD/$$f
+        dist = $$dirname(dist_file)
+        win32:dist = $$replace(dist, /, \\)
+        win32:orig_file = $$replace(orig_file, /, \\)
+        !exists($$dist):system($$MKDIR $$dist)
+        !exists($$dist_file):system($$COPY $$orig_file $$dist)
+    }
+}

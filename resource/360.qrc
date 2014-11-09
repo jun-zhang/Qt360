@@ -108,6 +108,9 @@
         <file alias="gray">default_theme/gray.png</file>
         <file alias="my_tool_bk">default_theme/AdvTool/Images/my_tool_bk.png</file>
         <file alias="Logo">default_theme/MainFrame/Image/Logo.png</file>
+        <file alias="video_close">video/close.png</file>
+        <file alias="video_end">video/end.png</file>
+        <file alias="video_start">video/start.png</file>
     </qresource>
     <qresource prefix="/numbers/main">
         <file alias="0">default_theme/font/tijian_score/0.png</file>

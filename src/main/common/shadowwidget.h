@@ -2,8 +2,9 @@
 #define SHADOWWIDGET_H
 
 #include <QWidget>
+#include <QDialog>
 
-class ShadowWidget : public QWidget
+class ShadowWidget : public QDialog
 {
     Q_OBJECT
 public:

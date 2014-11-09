@@ -12,6 +12,7 @@ class CleanWidget;
 class YouhuaWidget;
 class BaseStyleWidget;
 class OpacityWidget;
+class VideoWidget;
 
 class MainWindow : public ShadowWidget
 {
@@ -43,6 +44,7 @@ private:
     CleanWidget *m_cleanWidget;
     YouhuaWidget    *m_youhuaWidget;
     OpacityWidget *m_grayWidget;
+    VideoWidget *m_video;
 };
 
 #endif // MAINWINDOW_H

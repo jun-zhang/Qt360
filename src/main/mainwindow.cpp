@@ -5,6 +5,7 @@
 #include "../clean/cleanwidget.h"
 #include "../youhua/youhuawidget.h"
 #include "common/opacitywidget.h"
+#include "common/videowidget.h"
 #include <QApplication>
 #include <QFile>
 #include <QStackedWidget>
@@ -26,6 +27,7 @@ void MainWindow::initUI()
     this->setFixedSize(900, 600);
     this->setWindowIcon(QIcon(":/main/Logo"));
     this->setWindowTitle(tr("360安全卫士"));
+    m_video = new VideoWidget(this);
     m_stackWidget = new QStackedWidget(this);
     m_stackWidget->setGeometry(rect());
     m_stackWidget->lower();
@@ -52,6 +54,7 @@ void MainWindow::initConnect()
     connect(m_topWidget, SIGNAL(goMain()), m_bottomWidget, SLOT(goMain()));
     connect(m_topWidget, SIGNAL(showMin()), this, SLOT(showMinimized()));
     connect(m_topWidget, SIGNAL(closeWidget()), this, SLOT(closeWidget()));
+    connect(m_topWidget, SIGNAL(playVideo()), this, SLOT(playVideo()));
     connect(m_topWidget, SIGNAL(showSkin()), this, SLOT(showSkin()));
     connect(m_safeWidget, SIGNAL(goToMain()), this, SLOT(goToMain()));
     connect(m_cleanWidget, SIGNAL(goToMain()), this, SLOT(goToMain()));
@@ -112,7 +115,9 @@ void MainWindow::upAnimFinished()
 
 void MainWindow::playVideo()
 {
-
+    m_video->move(mapToGlobal(QPoint(0,0)));//移动到与主窗口同一位置
+    m_video->startVideo();
+    m_video->exec();
 }
 
 void MainWindow::showMenu()
