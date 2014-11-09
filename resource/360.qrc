@@ -53,7 +53,7 @@
         <file>safeid_new_theme/image/priv_btn.png</file>
     </qresource>
     <qresource prefix="/main">
-        <file>default_theme/MainFrame/Image/AboutLogo.png</file>
+        <file alias="AboutLogo">default_theme/MainFrame/Image/AboutLogo.png</file>
         <file alias="background">default_theme/MainFrame/Image/background_mainwnd.jpg</file>
         <file alias="btn_examine_now">default_theme/MainFrame/Image/btn_examine_now.png</file>
         <file alias="btn_scan_background">default_theme/MainFrame/Image/btn_scan_background.png</file>
@@ -105,6 +105,9 @@
         <file alias="NetSpeed">advtools/AdvanceTools_NetSpeed_10_32.png</file>
         <file alias="all_tool_bk">default_theme/AdvTool/Images/all_tool_bk.png</file>
         <file alias="advtool_more">default_theme/MainFrame/Image/advtool_more.png</file>
+        <file alias="gray">default_theme/gray.png</file>
+        <file alias="my_tool_bk">default_theme/AdvTool/Images/my_tool_bk.png</file>
+        <file alias="Logo">default_theme/MainFrame/Image/Logo.png</file>
     </qresource>
     <qresource prefix="/numbers/main">
         <file alias="0">default_theme/font/tijian_score/0.png</file>

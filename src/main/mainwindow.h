@@ -10,6 +10,8 @@ class MainBottomWidget;
 class SafeWidget;
 class CleanWidget;
 class YouhuaWidget;
+class BaseStyleWidget;
+class OpacityWidget;
 
 class MainWindow : public ShadowWidget
 {
@@ -30,6 +32,7 @@ private slots:
     void goToSafe();
     void goToClean();
     void goToYouhua();
+    void upAnimFinished();
 private:
     MainTopWidget   *m_topWidget;
     MainBottomWidget    *m_bottomWidget;
@@ -39,6 +42,7 @@ private:
     SafeWidget  *m_safeWidget;
     CleanWidget *m_cleanWidget;
     YouhuaWidget    *m_youhuaWidget;
+    OpacityWidget *m_grayWidget;
 };
 
 #endif // MAINWINDOW_H

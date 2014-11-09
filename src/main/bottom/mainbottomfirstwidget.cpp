@@ -17,26 +17,23 @@ MainBottomFirstWidget::MainBottomFirstWidget(QWidget *parent) :
 
 void MainBottomFirstWidget::initUI()
 {
-    QFont labelfont;
-    labelfont.setBold(true);
-    labelfont.setPixelSize(17);
     m_safeButton = new StaticButton(":/main/safe_check");
     QLabel *safeLabel = new QLabel(tr("查杀修复"));
-    safeLabel->setFont(labelfont);
+    safeLabel->setObjectName("mainBottomLabel");
     QVBoxLayout *safeLayout = new QVBoxLayout;
     safeLayout->addWidget(m_safeButton, 0, Qt::AlignCenter);
     safeLayout->addWidget(safeLabel, 0, Qt::AlignCenter);
 
     m_cleanButton = new StaticButton(":/main/clean");
     QLabel *cleanLabel = new QLabel(tr("电脑清理"));
-    cleanLabel->setFont(labelfont);
+    cleanLabel->setObjectName("mainBottomLabel");
     QVBoxLayout *cleanLayout = new QVBoxLayout;
     cleanLayout->addWidget(m_cleanButton, 0, Qt::AlignCenter);
     cleanLayout->addWidget(cleanLabel, 0, Qt::AlignCenter);
 
     m_youhuaButton = new StaticButton(":/main/youhua");
     QLabel *youhuaLabel = new QLabel(tr("优化加速"));
-    youhuaLabel->setFont(labelfont);
+    youhuaLabel->setObjectName("mainBottomLabel");
     QVBoxLayout *youhuaLayout = new QVBoxLayout;
     youhuaLayout->addWidget(m_youhuaButton, 0, Qt::AlignCenter);
     youhuaLayout->addWidget(youhuaLabel, 0, Qt::AlignCenter);

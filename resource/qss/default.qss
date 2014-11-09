@@ -13,6 +13,17 @@ QLabel#bottomlabel{
     font-size: 15px;
 }
 
+QLabel#mainBottomLabel{
+    color:black;
+    font-size: 15px;
+}
+
+QLabel#backButtonText{
+    color:gray;
+    font-size: 12px;
+}
+
+
 WenliWidget{
     qproperty-backPix: "default";
 }

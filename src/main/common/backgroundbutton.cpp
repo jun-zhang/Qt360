@@ -11,11 +11,12 @@ BackgroundButton::BackgroundButton(QWidget *parent) :
     this->setAttribute(Qt::WA_TranslucentBackground);
     m_foreLabel = new QLabel;
     m_textLabel = new QLabel;
+    m_textLabel->setObjectName("backButtonText");
     m_textLabel->hide();
     QVBoxLayout *vLayout = new QVBoxLayout;
     vLayout->addWidget(m_foreLabel, 0, Qt::AlignCenter);
     vLayout->addWidget(m_textLabel, 0, Qt::AlignHCenter);
-
+    vLayout->setContentsMargins(0, 5, 0, 5);
     this->setLayout(vLayout);
 }
 
@@ -46,6 +47,7 @@ void BackgroundButton::setIconsInfo(const QString &fore, const QString &back, in
 void BackgroundButton::setText(const QString &text)
 {
     m_textLabel->setText(text);
+    m_textLabel->adjustSize();
     m_textLabel->show();
 }
 

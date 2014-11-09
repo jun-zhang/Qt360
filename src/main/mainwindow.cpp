@@ -4,28 +4,39 @@
 #include "../safe/safewidget.h"
 #include "../clean/cleanwidget.h"
 #include "../youhua/youhuawidget.h"
+#include "common/opacitywidget.h"
 #include <QApplication>
 #include <QFile>
 #include <QStackedWidget>
 #include <QPropertyAnimation>
 #include <QParallelAnimationGroup>
+#include <QLabel>
+#include <QIcon>
 
 MainWindow::MainWindow(QWidget *parent) :
     ShadowWidget(parent)
 {
     this->initUI();
-    this->initConnect();
     this->initAnim();
+    this->initConnect();
 }
 
 void MainWindow::initUI()
 {
     this->setFixedSize(900, 600);
-    m_topWidget = new MainTopWidget(this);
-    m_bottomWidget = new MainBottomWidget(this);
+    this->setWindowIcon(QIcon(":/main/Logo"));
+    this->setWindowTitle(tr("360安全卫士"));
     m_stackWidget = new QStackedWidget(this);
     m_stackWidget->setGeometry(rect());
     m_stackWidget->lower();
+
+    //m_grayWidget = new BaseStyleWidget(this);
+    m_grayWidget = new OpacityWidget(this);
+    m_grayWidget->setGeometry(rect());
+    m_grayWidget->setColor(QColor(Qt::gray));
+
+    m_topWidget = new MainTopWidget(this);
+    m_bottomWidget = new MainBottomWidget(this);
 
     m_safeWidget = new SafeWidget;
     m_stackWidget->addWidget(m_safeWidget);
@@ -48,6 +59,7 @@ void MainWindow::initConnect()
     connect(m_bottomWidget, SIGNAL(safeClicked()), this, SLOT(goToSafe()));
     connect(m_bottomWidget, SIGNAL(cleanClicked()), this, SLOT(goToClean()));
     connect(m_bottomWidget, SIGNAL(youhuaClicked()), this, SLOT(goToYouhua()));
+    connect(m_upGroup, SIGNAL(finished()), this, SLOT(upAnimFinished()));
 }
 
 void MainWindow::initAnim()
@@ -62,9 +74,15 @@ void MainWindow::initAnim()
     m_downMainAnimation->setStartValue(QPoint(0, 440));
     m_downMainAnimation->setEndValue(QPoint(0, 600));
 
+    QPropertyAnimation  *m_toTrans = new QPropertyAnimation(m_grayWidget, "opacity");
+    m_toTrans->setDuration(200);
+    m_toTrans->setStartValue(1);
+    m_toTrans->setEndValue(0);
+
     m_upGroup = new QParallelAnimationGroup;
     m_upGroup->addAnimation(m_upMainAnimation);
     m_upGroup->addAnimation(m_downMainAnimation);
+    m_upGroup->addAnimation(m_toTrans);
 
     QPropertyAnimation *m_upGarAnimation = new QPropertyAnimation(m_topWidget, "pos");
     m_upGarAnimation->setDuration(200);
@@ -76,9 +94,20 @@ void MainWindow::initAnim()
     m_downGarAnimation->setStartValue(QPoint(0, 600));
     m_downGarAnimation->setEndValue(QPoint(0, 440));
 
+    QPropertyAnimation  *m_toGray = new QPropertyAnimation(m_grayWidget, "opacity");
+    m_toGray->setDuration(200);
+    m_toGray->setStartValue(0);
+    m_toGray->setEndValue(1);
+
     m_downGroup = new QParallelAnimationGroup;
     m_downGroup->addAnimation(m_upGarAnimation);
     m_downGroup->addAnimation(m_downGarAnimation);
+    m_downGroup->addAnimation(m_toGray);
+}
+
+void MainWindow::upAnimFinished()
+{
+    m_grayWidget->hide();
 }
 
 void MainWindow::playVideo()
@@ -93,6 +122,7 @@ void MainWindow::showMenu()
 
 void MainWindow::goToMain()
 {
+    m_grayWidget->show();
     m_downGroup->start();
 }
 
