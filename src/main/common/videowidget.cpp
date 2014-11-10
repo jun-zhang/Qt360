@@ -2,6 +2,7 @@
 #include "../../commom/staticbutton.h"
 #include <QLabel>
 
+
 VideoWidget::VideoWidget(QWidget *parent) :
     QDialog(parent), m_isFirst(true)
 {

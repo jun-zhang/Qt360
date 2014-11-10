@@ -3,10 +3,12 @@
 
 #include <QWidget>
 #include <QDialog>
-#include <phonon/videoplayer.h>
 #include <phonon/mediasource.h>
+#include <phonon/mediaobject.h>
+#include <phonon/AudioOutput>
+#include <phonon/videoplayer.h>
 #include <phonon/VideoWidget>
-#include <phonon>
+
 class StaticButton;
 class QLabel;
 
